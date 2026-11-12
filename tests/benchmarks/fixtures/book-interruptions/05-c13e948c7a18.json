@@ -1,0 +1,14 @@
+{
+  "request": {
+    "model": "qwen3-tts-1.7b-customvoice",
+    "voice": "Ryan",
+    "input": "a fantasy book please.",
+    "language": "English",
+    "response_format": "wav",
+    "instruct": "Speak clearly in English at a measured pace. Pronounce every word fully."
+  },
+  "sha256": "1ca8864d0a8753d442d544398b565b6ee02e5fee2414f5d7cde4667ea358c756",
+  "asr": "A fantasy book, please.",
+  "asr_matches": true,
+  "duration_s": 2.08
+}

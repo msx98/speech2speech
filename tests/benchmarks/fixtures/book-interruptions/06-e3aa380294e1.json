@@ -1,0 +1,14 @@
+{
+  "request": {
+    "model": "qwen3-tts-1.7b-customvoice",
+    "voice": "Ryan",
+    "input": "Thanks!",
+    "language": "English",
+    "response_format": "wav",
+    "instruct": "Speak clearly in English at a measured pace. Pronounce every word fully."
+  },
+  "sha256": "4f6d09d6b6cdb617ae787785970b39537ef54707d4eb86a6b862d45e2e51b761",
+  "asr": "Thanks.",
+  "asr_matches": true,
+  "duration_s": 0.56
+}

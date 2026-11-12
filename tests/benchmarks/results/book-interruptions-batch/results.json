@@ -1,0 +1,3211 @@
+{
+  "turns": [
+    {
+      "index": 1,
+      "text": "Could you suggest a good book to read this afternoon?",
+      "transcripts": [
+        "Could you suggest a good book to read this afternoon?"
+      ],
+      "response_ids": [
+        "resp_ae23b3f2108b477cb863"
+      ],
+      "input_started_at": 312542.544875374,
+      "user_speech_started_at": 312542.635516721,
+      "speech_detected_at": 312542.646517427,
+      "user_speech_ended_at": 312546.335853762,
+      "reply_response_id": "resp_ae23b3f2108b477cb863",
+      "first_assistant_speech_at": 312548.287910575,
+      "speech_end_to_reply_ms": 1952.06,
+      "input_asr_matches": true,
+      "llm_first_token_after_speech_end_ms": 1174.44,
+      "tts_first_speech_after_llm_first_token_ms": 706.02,
+      "asr_first_token_after_speech_start_ms": 4450.66,
+      "asr_last_token_after_speech_end_ms": 960.95,
+      "asr_generation_done_after_speech_end_ms": 961.08
+    },
+    {
+      "index": 2,
+      "text": "wait...",
+      "transcripts": [
+        "Wait."
+      ],
+      "response_ids": [
+        "resp_6bdfa4e4abc348ef9d5f"
+      ],
+      "interrupt_response_id": "resp_ae23b3f2108b477cb863",
+      "interrupt_after_s": 1.0,
+      "scheduled_interrupt_at": 312549.287910575,
+      "input_started_at": 312549.208994208,
+      "user_speech_started_at": 312549.290135999,
+      "speech_detected_at": 312549.309780766,
+      "cancel_sent_at": 312549.309780766,
+      "generation_already_complete": false,
+      "playback_stopped_at": 312549.309796936,
+      "cancel_ack_at": 312549.3103179,
+      "user_speech_ended_at": 312549.589275233,
+      "reply_response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "first_assistant_speech_at": 312551.420455473,
+      "speech_end_to_reply_ms": 1831.18,
+      "interruption_to_playback_stop_ms": 19.66,
+      "interruption_to_last_assistant_speech_ms": 19.65,
+      "actual_interrupt_after_s": 1.002,
+      "interruption_to_cancel_ack_ms": 20.18,
+      "input_asr_matches": true,
+      "llm_first_token_after_speech_end_ms": 996.83,
+      "tts_first_speech_after_llm_first_token_ms": 742.89,
+      "asr_first_token_after_speech_start_ms": 1033.54,
+      "asr_last_token_after_speech_end_ms": 806.2,
+      "asr_generation_done_after_speech_end_ms": 806.34
+    },
+    {
+      "index": 3,
+      "text": "Ok, go on.",
+      "transcripts": [
+        "Okay, go on."
+      ],
+      "response_ids": [
+        "resp_175528e7c94c4e4ca080"
+      ],
+      "input_started_at": 312559.493416872,
+      "user_speech_started_at": 312559.58401066903,
+      "speech_detected_at": 312559.594904898,
+      "user_speech_ended_at": 312561.003914823,
+      "reply_response_id": "resp_175528e7c94c4e4ca080",
+      "first_assistant_speech_at": 312563.094120484,
+      "speech_end_to_reply_ms": 2090.21,
+      "input_asr_matches": true,
+      "llm_first_token_after_speech_end_ms": 1292.59,
+      "tts_first_speech_after_llm_first_token_ms": 705.41,
+      "asr_first_token_after_speech_start_ms": 2186.87,
+      "asr_last_token_after_speech_end_ms": 877.46,
+      "asr_generation_done_after_speech_end_ms": 877.69
+    },
+    {
+      "index": 4,
+      "text": "Thanks, do you have another suggestion?",
+      "transcripts": [
+        "Thanks. Do you have another suggestion?"
+      ],
+      "response_ids": [
+        "resp_de0d5677a0f245e68e02"
+      ],
+      "input_started_at": 312580.381762009,
+      "user_speech_started_at": 312580.472145141,
+      "speech_detected_at": 312580.482685241,
+      "user_speech_ended_at": 312582.523046154,
+      "reply_response_id": "resp_de0d5677a0f245e68e02",
+      "first_assistant_speech_at": 312584.406483356,
+      "speech_end_to_reply_ms": 1883.44,
+      "input_asr_matches": true,
+      "llm_first_token_after_speech_end_ms": 1252.51,
+      "tts_first_speech_after_llm_first_token_ms": 549.46,
+      "asr_first_token_after_speech_start_ms": 2807.64,
+      "asr_last_token_after_speech_end_ms": 906.01,
+      "asr_generation_done_after_speech_end_ms": 906.15
+    },
+    {
+      "index": 5,
+      "text": "a fantasy book please.",
+      "transcripts": [
+        "A fantasy book, please."
+      ],
+      "response_ids": [
+        "resp_e1316a475204493c8b57"
+      ],
+      "interrupt_response_id": "resp_de0d5677a0f245e68e02",
+      "interrupt_after_s": 2.0,
+      "scheduled_interrupt_at": 312586.406483356,
+      "input_started_at": 312586.317458029,
+      "user_speech_started_at": 312586.408653835,
+      "speech_detected_at": 312586.41869676,
+      "cancel_sent_at": 312586.41869676,
+      "generation_already_complete": false,
+      "playback_stopped_at": 312586.41870585,
+      "cancel_ack_at": 312586.419322711,
+      "user_speech_ended_at": 312588.367911319,
+      "reply_response_id": "resp_e1316a475204493c8b57",
+      "first_assistant_speech_at": 312590.36362168903,
+      "speech_end_to_reply_ms": 1995.71,
+      "interruption_to_playback_stop_ms": 10.05,
+      "interruption_to_last_assistant_speech_ms": 10.04,
+      "actual_interrupt_after_s": 2.002,
+      "interruption_to_cancel_ack_ms": 10.67,
+      "input_asr_matches": true,
+      "llm_first_token_after_speech_end_ms": 1218.45,
+      "tts_first_speech_after_llm_first_token_ms": 705.54,
+      "asr_first_token_after_speech_start_ms": 2709.09,
+      "asr_last_token_after_speech_end_ms": 885.82,
+      "asr_generation_done_after_speech_end_ms": 886.02
+    },
+    {
+      "index": 6,
+      "text": "Thanks!",
+      "transcripts": [
+        "Thanks."
+      ],
+      "response_ids": [
+        "resp_36f45c690d364846bf4e"
+      ],
+      "input_started_at": 312608.37046389,
+      "user_speech_started_at": 312608.451557898,
+      "speech_detected_at": 312608.47103435,
+      "user_speech_ended_at": 312608.890923801,
+      "reply_response_id": "resp_36f45c690d364846bf4e",
+      "first_assistant_speech_at": 312610.684344995,
+      "speech_end_to_reply_ms": 1793.42,
+      "input_asr_matches": true,
+      "llm_first_token_after_speech_end_ms": 1204.38,
+      "tts_first_speech_after_llm_first_token_ms": 507.68,
+      "asr_first_token_after_speech_start_ms": 1184.69,
+      "asr_last_token_after_speech_end_ms": 837.29,
+      "asr_generation_done_after_speech_end_ms": 837.48
+    }
+  ],
+  "responses": [
+    {
+      "id": "resp_ae23b3f2108b477cb863",
+      "status": "cancelled",
+      "suppressed": true,
+      "received_after_cancel": 0,
+      "transcript": "",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "speech_onset": 312548.287910575,
+      "playback_cutoff": 6.764872423023917,
+      "stages_ms": {
+        "speech_end": 0.0,
+        "turn_committed": 699.72,
+        "asr_started": 699.72,
+        "speech_started": -3679.76,
+        "asr_generation_started": 746.65,
+        "asr_first_token": 770.9,
+        "asr_last_token": 960.95,
+        "asr_tokens_done": 961.08,
+        "asr_completed": 961.71,
+        "response_started": 962.21,
+        "llm_first_token": 1174.44,
+        "llm_first_text_token": 1174.65,
+        "first_text_chunk": 1376.35,
+        "tts_started": 1376.45,
+        "tts_first_audio": 1880.34,
+        "tts_first_speech": 1880.46,
+        "first_audio_sent": 1881.42,
+        "response_cancelled": 2984.02
+      },
+      "done_at": 312549.3103179,
+      "played_audio_s": 1.101875
+    },
+    {
+      "id": "resp_6bdfa4e4abc348ef9d5f",
+      "status": "completed",
+      "suppressed": false,
+      "received_after_cancel": 0,
+      "transcript": "No problem, I'll hold off on the suggestion. Feel free to share what you're in the mood for or if you need a different kind of recommendation!",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "speech_onset": 312551.420455473,
+      "stages_ms": {
+        "speech_end": 0.0,
+        "turn_committed": 701.0,
+        "asr_started": 701.0,
+        "speech_started": -279.82,
+        "asr_generation_started": 734.83,
+        "asr_first_token": 753.72,
+        "asr_last_token": 806.2,
+        "asr_tokens_done": 806.34,
+        "asr_completed": 806.84,
+        "response_started": 807.84,
+        "llm_first_token": 996.83,
+        "llm_first_text_token": 996.91,
+        "first_text_chunk": 1241.53,
+        "tts_started": 1241.64,
+        "tts_first_audio": 1739.59,
+        "tts_first_speech": 1739.72,
+        "first_audio_sent": 1740.67,
+        "response_done": 6304.83
+      },
+      "done_at": 312555.894529979,
+      "played_audio_s": 8.16
+    },
+    {
+      "id": "resp_175528e7c94c4e4ca080",
+      "status": "completed",
+      "suppressed": false,
+      "received_after_cancel": 0,
+      "transcript": "How about *The Night Circus* by Erin Morgenstern? It's a magical realism novel set in a mysterious circus where two young magicians prepare to compete in a grand contest. The immersive atmosphere and enchanting storytelling make it a perfect read for relaxing this afternoon.",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "speech_onset": 312563.094120484,
+      "stages_ms": {
+        "speech_end": 0.0,
+        "turn_committed": 699.55,
+        "asr_started": 699.55,
+        "speech_started": -1419.6,
+        "asr_generation_started": 744.82,
+        "asr_first_token": 767.27,
+        "asr_last_token": 877.46,
+        "asr_tokens_done": 877.69,
+        "asr_completed": 878.37,
+        "response_started": 878.87,
+        "llm_first_token": 1292.59,
+        "llm_first_text_token": 1292.71,
+        "first_text_chunk": 1496.87,
+        "tts_started": 1497.01,
+        "tts_first_audio": 1997.81,
+        "tts_first_speech": 1998.0,
+        "first_audio_sent": 1999.38,
+        "response_done": 12161.84
+      },
+      "done_at": 312573.176236019,
+      "played_audio_s": 17.36
+    },
+    {
+      "id": "resp_de0d5677a0f245e68e02",
+      "status": "cancelled",
+      "suppressed": true,
+      "received_after_cancel": 0,
+      "transcript": "",
+      "item_id": "item_be4081e929514933b596",
+      "speech_onset": 312584.406483356,
+      "playback_cutoff": 43.873781337053515,
+      "stages_ms": {
+        "speech_end": 0.0,
+        "turn_committed": 699.33,
+        "asr_started": 699.33,
+        "speech_started": -2040.76,
+        "asr_generation_started": 744.81,
+        "asr_first_token": 766.88,
+        "asr_last_token": 906.01,
+        "asr_tokens_done": 906.15,
+        "asr_completed": 906.77,
+        "response_started": 907.24,
+        "llm_first_token": 1252.51,
+        "llm_first_text_token": 1252.7,
+        "first_text_chunk": 1293.99,
+        "tts_started": 1294.1,
+        "tts_first_audio": 1801.88,
+        "tts_first_speech": 1801.97,
+        "first_audio_sent": 1802.92,
+        "response_cancelled": 3895.8
+      },
+      "done_at": 312586.419322711,
+      "played_audio_s": 2.0922083333333332
+    },
+    {
+      "id": "resp_e1316a475204493c8b57",
+      "status": "completed",
+      "suppressed": false,
+      "received_after_cancel": 0,
+      "transcript": "How about *The Name of the Wind* by Patrick Rothfuss? It follows a legendary wizard who recounts his life story to an apprentice, filled with rich lore, deep character development, and stunning world-building that will transport you to a magical realm.",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "speech_onset": 312590.36362168903,
+      "stages_ms": {
+        "speech_end": 0.0,
+        "turn_committed": 700.73,
+        "asr_started": 700.73,
+        "speech_started": -1939.72,
+        "asr_generation_started": 747.42,
+        "asr_first_token": 769.37,
+        "asr_last_token": 885.82,
+        "asr_tokens_done": 886.02,
+        "asr_completed": 886.67,
+        "response_started": 887.35,
+        "llm_first_token": 1218.45,
+        "llm_first_text_token": 1218.62,
+        "first_text_chunk": 1424.71,
+        "tts_started": 1424.8,
+        "tts_first_audio": 1923.82,
+        "tts_first_speech": 1923.99,
+        "first_audio_sent": 1925.0,
+        "response_done": 12605.79
+      },
+      "done_at": 312600.964357191,
+      "played_audio_s": 18.08
+    },
+    {
+      "id": "resp_36f45c690d364846bf4e",
+      "status": "completed",
+      "suppressed": false,
+      "received_after_cancel": 0,
+      "transcript": "You're welcome! Let me know if you want another one or if there's a specific theme you're interested in.",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "speech_onset": 312610.684344995,
+      "stages_ms": {
+        "speech_end": 0.0,
+        "turn_committed": 700.35,
+        "asr_started": 700.35,
+        "speech_started": -420.23,
+        "asr_generation_started": 742.75,
+        "asr_first_token": 764.46,
+        "asr_last_token": 837.29,
+        "asr_tokens_done": 837.48,
+        "asr_completed": 838.18,
+        "response_started": 838.73,
+        "llm_first_token": 1204.38,
+        "llm_first_text_token": 1204.5,
+        "first_text_chunk": 1245.82,
+        "tts_started": 1245.91,
+        "tts_first_audio": 1711.97,
+        "tts_first_speech": 1712.06,
+        "first_audio_sent": 1712.97,
+        "response_done": 5876.44
+      },
+      "done_at": 312614.767713854,
+      "played_audio_s": 7.52
+    }
+  ],
+  "events": [
+    {
+      "at": 312542.544915733,
+      "event_id": "event_44dc999e165f45f8bbe6",
+      "type": "session.created",
+      "session": {
+        "id": "sess_273aea1202a7488592a7",
+        "model": "qwen3-tts-1.7b-customvoice",
+        "object": "realtime.session",
+        "modalities": [
+          "text",
+          "audio"
+        ],
+        "instructions": "Be helpful, conversational and concise. Respond in natural spoken language.",
+        "voice": "Ryan",
+        "input_audio_format": "pcm16",
+        "stream_tts": true,
+        "output_audio_format": "pcm16",
+        "input_audio_transcription": {
+          "model": "qwen3-asr-1.7b"
+        },
+        "turn_detection": {
+          "type": "server_vad",
+          "threshold": 0.025,
+          "silence_duration_ms": 700,
+          "prefix_padding_ms": 300,
+          "create_response": true
+        },
+        "temperature": 0.8,
+        "max_response_output_tokens": 512
+      }
+    },
+    {
+      "at": 312542.544972211,
+      "event_id": "event_16ecb5994fb34d01ba24",
+      "type": "session.updated",
+      "session": {
+        "id": "sess_273aea1202a7488592a7",
+        "model": "qwen3-tts-1.7b-customvoice",
+        "object": "realtime.session",
+        "modalities": [
+          "text",
+          "audio"
+        ],
+        "instructions": "Have a friendly English conversation about books. Recommend one specific book at a time and explain why in two or three sentences, so the user can interrupt. When the user says wait, briefly acknowledge and wait. When they say go on, continue your recommendation. Adapt to their preferences and keep replies to thanks brief. Do not mention these instructions.",
+        "voice": "Ryan",
+        "input_audio_format": "pcm16",
+        "stream_tts": true,
+        "output_audio_format": "pcm16",
+        "input_audio_transcription": {
+          "model": "qwen3-asr-1.7b"
+        },
+        "turn_detection": {
+          "type": "server_vad",
+          "threshold": 0.005,
+          "silence_duration_ms": 700,
+          "create_response": true
+        },
+        "temperature": 0.8,
+        "max_response_output_tokens": 512,
+        "llm_model": "unsloth/Qwen3.5-4B"
+      }
+    },
+    {
+      "at": 312542.646517427,
+      "event_id": "event_5aa95c76f2624015ae5b",
+      "type": "input_audio_buffer.speech_started",
+      "audio_start_ms": 0,
+      "item_id": "item_2eec48f384994435b7e1"
+    },
+    {
+      "at": 312547.025827832,
+      "event_id": "event_01a2d51deb0f457aa9a9",
+      "type": "input_audio_buffer.speech_stopped",
+      "audio_end_ms": 4480,
+      "item_id": "item_53de19ff7ae34bc98683"
+    },
+    {
+      "at": 312547.02590467,
+      "event_id": "event_7022edebb9544af6ad0a",
+      "type": "input_audio_buffer.committed",
+      "previous_item_id": null,
+      "item_id": "item_c98fe5af356b4de8b157"
+    },
+    {
+      "at": 312547.025922359,
+      "event_id": "event_a41bde818c0e4303bf7c",
+      "type": "conversation.item.created",
+      "previous_item_id": null,
+      "item": {
+        "id": "item_c98fe5af356b4de8b157",
+        "type": "message",
+        "role": "user",
+        "status": "completed",
+        "content": [
+          {
+            "type": "input_audio",
+            "transcript": null
+          }
+        ]
+      }
+    },
+    {
+      "at": 312547.287914044,
+      "event_id": "event_a74290e1d21248de8d73",
+      "type": "conversation.item.input_audio_transcription.completed",
+      "item_id": "item_c98fe5af356b4de8b157",
+      "content_index": 0,
+      "transcript": "Could you suggest a good book to read this afternoon?"
+    },
+    {
+      "at": 312547.288270953,
+      "event_id": "event_19b3dca2158e487ca61d",
+      "type": "response.created",
+      "response": {
+        "id": "resp_ae23b3f2108b477cb863",
+        "object": "realtime.response",
+        "status": "in_progress",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312547.288325391,
+      "event_id": "event_7b9bcd2193cd44b2ba1c",
+      "type": "response.output_item.added",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "output_index": 0,
+      "item": {
+        "id": "item_cd227c4ea04d4aabbb9f",
+        "type": "message",
+        "status": "in_progress",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": ""
+          }
+        ]
+      }
+    },
+    {
+      "at": 312547.28834675,
+      "event_id": "event_0108160ef6d648ab89c7",
+      "type": "response.content_part.added",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": ""
+      }
+    },
+    {
+      "at": 312548.207831857,
+      "event_id": "event_a808d4f12e67467c90bb",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312548.208736539,
+      "event_id": "event_c48d8e6295bd4824b190",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312548.652253555,
+      "event_id": "event_d89e11a1da744436add5",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312548.652727311,
+      "event_id": "event_b388304cf87e4a7698d7",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312549.031667037,
+      "event_id": "event_adce48d595f14e4584c3",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312549.032538831,
+      "event_id": "event_688316aff1ed4aad9333",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312549.309780766,
+      "event_id": "event_079b1da84b3d4c26a07a",
+      "type": "input_audio_buffer.speech_started",
+      "audio_start_ms": 0,
+      "item_id": "item_75f61e9d0f5c439a92c1"
+    },
+    {
+      "at": 312549.310259872,
+      "event_id": "event_9c2c41bdf3be4917932a",
+      "type": "response.timing",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "stages": {
+        "speech_end": 0.0,
+        "turn_committed": 699.72,
+        "asr_started": 699.72,
+        "speech_started": -3679.76,
+        "asr_generation_started": 746.65,
+        "asr_first_token": 770.9,
+        "asr_last_token": 960.95,
+        "asr_tokens_done": 961.08,
+        "asr_completed": 961.71,
+        "response_started": 962.21,
+        "llm_first_token": 1174.44,
+        "llm_first_text_token": 1174.65,
+        "first_text_chunk": 1376.35,
+        "tts_started": 1376.45,
+        "tts_first_audio": 1880.34,
+        "tts_first_speech": 1880.46,
+        "first_audio_sent": 1881.42,
+        "response_cancelled": 2984.02
+      }
+    },
+    {
+      "at": 312549.310276031,
+      "event_id": "event_c3dcda39a9fc4e93acac",
+      "type": "response.output_audio.done",
+      "response_id": "resp_ae23b3f2108b477cb863",
+      "item_id": "item_cd227c4ea04d4aabbb9f",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312549.3103179,
+      "event_id": "event_e9ba8c0672b74fc095d1",
+      "type": "response.done",
+      "response": {
+        "id": "resp_ae23b3f2108b477cb863",
+        "object": "realtime.response",
+        "status": "cancelled",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312550.290398956,
+      "event_id": "event_a62ce9b077a1494caa08",
+      "type": "input_audio_buffer.speech_stopped",
+      "audio_end_ms": 1300,
+      "item_id": "item_cb18065e3ae94706803d"
+    },
+    {
+      "at": 312550.290435365,
+      "event_id": "event_1257e83668e84c69b7d5",
+      "type": "input_audio_buffer.committed",
+      "previous_item_id": null,
+      "item_id": "item_f6a59c30479f447594f6"
+    },
+    {
+      "at": 312550.290452335,
+      "event_id": "event_fd9c036349444803bf12",
+      "type": "conversation.item.created",
+      "previous_item_id": null,
+      "item": {
+        "id": "item_f6a59c30479f447594f6",
+        "type": "message",
+        "role": "user",
+        "status": "completed",
+        "content": [
+          {
+            "type": "input_audio",
+            "transcript": null
+          }
+        ]
+      }
+    },
+    {
+      "at": 312550.396485233,
+      "event_id": "event_a070c8dcaf454da3b13e",
+      "type": "conversation.item.input_audio_transcription.completed",
+      "item_id": "item_f6a59c30479f447594f6",
+      "content_index": 0,
+      "transcript": "Wait."
+    },
+    {
+      "at": 312550.397291048,
+      "event_id": "event_18cfe045d3894d77bf9a",
+      "type": "response.created",
+      "response": {
+        "id": "resp_6bdfa4e4abc348ef9d5f",
+        "object": "realtime.response",
+        "status": "in_progress",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312550.397332677,
+      "event_id": "event_09383c5c4d8f4633b28f",
+      "type": "response.output_item.added",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "output_index": 0,
+      "item": {
+        "id": "item_4c6e1c5cba724684b5f1",
+        "type": "message",
+        "status": "in_progress",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": ""
+          }
+        ]
+      }
+    },
+    {
+      "at": 312550.397343496,
+      "event_id": "event_2ec4078c7cc64b2e9438",
+      "type": "response.content_part.added",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": ""
+      }
+    },
+    {
+      "at": 312551.330366696,
+      "event_id": "event_af9cbb07e3f9405d9181",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312551.331373365,
+      "event_id": "event_9f20dbaa373842b8b6b4",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312551.729680856,
+      "event_id": "event_4d8662ef24264cdba584",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312551.730079084,
+      "event_id": "event_981710b1baee4bcab63a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312552.112188252,
+      "event_id": "event_335fcc6044b242dea1c0",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312552.112965118,
+      "event_id": "event_f73ba61c56c84173be06",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312552.494472825,
+      "event_id": "event_3b41a521143b4c31bb92",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312552.494857064,
+      "event_id": "event_cce359d8b05f4d57bf5a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312552.787955673,
+      "event_id": "event_cf9f2b80f0a24aaf9714",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312552.788323001,
+      "event_id": "event_cda5da20afc84369b5ac",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312553.177872961,
+      "event_id": "event_8b9b9a709f664e018f27",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312553.178594279,
+      "event_id": "event_4959b61dd69948c2b87f",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312553.559953849,
+      "event_id": "event_edfd7e330cb2403dabd4",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312553.560418335,
+      "event_id": "event_343267be9d15444d92d5",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312553.946455462,
+      "event_id": "event_6c146fac9aa343cfb2e7",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312553.947168791,
+      "event_id": "event_9291e072dd5a441ba699",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312554.322071,
+      "event_id": "event_1f0a7d85124b4c01b9b0",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312554.322563345,
+      "event_id": "event_b04e174e599e494cba16",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312554.706168326,
+      "event_id": "event_013e3d44eb7f446b9da9",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312554.706548525,
+      "event_id": "event_2d149f7521c44facb380",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.089705609,
+      "event_id": "event_ca9e244772f2427c9b72",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.090074508,
+      "event_id": "event_42a5e5352f174b38b6bd",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.47595261,
+      "event_id": "event_995b0d647b7540c4bb44",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.476460285,
+      "event_id": "event_e28bca43f70b43879b2b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.864448021,
+      "event_id": "event_77ad7c99b41e44c6a824",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.86482905,
+      "event_id": "event_d481cfec4f464003a3b2",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.894302616,
+      "event_id": "event_d34d86e803e343918950",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.894329675,
+      "event_id": "event_30f79760cebc409f950b",
+      "type": "response.output_audio.done",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312555.894452091,
+      "event_id": "event_a670f7304f0645679274",
+      "type": "response.output_audio_transcript.done",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0,
+      "transcript": "No problem, I'll hold off on the suggestion. Feel free to share what you're in the mood for or if you need a different kind of recommendation!"
+    },
+    {
+      "at": 312555.894474351,
+      "event_id": "event_0654f40147854678b1b5",
+      "type": "response.content_part.done",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "item_id": "item_4c6e1c5cba724684b5f1",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": "No problem, I'll hold off on the suggestion. Feel free to share what you're in the mood for or if you need a different kind of recommendation!"
+      }
+    },
+    {
+      "at": 312555.89449212,
+      "event_id": "event_d0a673fef5c142b0b16b",
+      "type": "response.output_item.done",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "output_index": 0,
+      "item": {
+        "id": "item_4c6e1c5cba724684b5f1",
+        "type": "message",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": "No problem, I'll hold off on the suggestion. Feel free to share what you're in the mood for or if you need a different kind of recommendation!"
+          }
+        ]
+      }
+    },
+    {
+      "at": 312555.894518359,
+      "event_id": "event_f28553b8342040be8090",
+      "type": "response.timing",
+      "response_id": "resp_6bdfa4e4abc348ef9d5f",
+      "stages": {
+        "speech_end": 0.0,
+        "turn_committed": 701.0,
+        "asr_started": 701.0,
+        "speech_started": -279.82,
+        "asr_generation_started": 734.83,
+        "asr_first_token": 753.72,
+        "asr_last_token": 806.2,
+        "asr_tokens_done": 806.34,
+        "asr_completed": 806.84,
+        "response_started": 807.84,
+        "llm_first_token": 996.83,
+        "llm_first_text_token": 996.91,
+        "first_text_chunk": 1241.53,
+        "tts_started": 1241.64,
+        "tts_first_audio": 1739.59,
+        "tts_first_speech": 1739.72,
+        "first_audio_sent": 1740.67,
+        "response_done": 6304.83
+      }
+    },
+    {
+      "at": 312555.894529979,
+      "event_id": "event_6293f07490bf49ebb65e",
+      "type": "response.done",
+      "response": {
+        "id": "resp_6bdfa4e4abc348ef9d5f",
+        "object": "realtime.response",
+        "status": "completed",
+        "output": [
+          {
+            "id": "item_4c6e1c5cba724684b5f1",
+            "type": "message",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_audio",
+                "transcript": "No problem, I'll hold off on the suggestion. Feel free to share what you're in the mood for or if you need a different kind of recommendation!"
+              }
+            ]
+          }
+        ],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312559.594904898,
+      "event_id": "event_9a9fd4e44f834f2d8f0a",
+      "type": "input_audio_buffer.speech_started",
+      "audio_start_ms": 0,
+      "item_id": "item_0caee9246dfe4d10a78e"
+    },
+    {
+      "at": 312561.713889501,
+      "event_id": "event_045765c604c5470c89e4",
+      "type": "input_audio_buffer.speech_stopped",
+      "audio_end_ms": 2440,
+      "item_id": "item_a0152622072c49bea5de"
+    },
+    {
+      "at": 312561.71393064,
+      "event_id": "event_cdb1e79e52584ca59f67",
+      "type": "input_audio_buffer.committed",
+      "previous_item_id": null,
+      "item_id": "item_5219357b18d14855bd2c"
+    },
+    {
+      "at": 312561.713952909,
+      "event_id": "event_67f5796ff82640df86e4",
+      "type": "conversation.item.created",
+      "previous_item_id": null,
+      "item": {
+        "id": "item_5219357b18d14855bd2c",
+        "type": "message",
+        "role": "user",
+        "status": "completed",
+        "content": [
+          {
+            "type": "input_audio",
+            "transcript": null
+          }
+        ]
+      }
+    },
+    {
+      "at": 312561.892980806,
+      "event_id": "event_e62f11e4a0a54cd49fb2",
+      "type": "conversation.item.input_audio_transcription.completed",
+      "item_id": "item_5219357b18d14855bd2c",
+      "content_index": 0,
+      "transcript": "Okay, go on."
+    },
+    {
+      "at": 312561.893239898,
+      "event_id": "event_e4b35883151e4c1b9c20",
+      "type": "response.created",
+      "response": {
+        "id": "resp_175528e7c94c4e4ca080",
+        "object": "realtime.response",
+        "status": "in_progress",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312561.893278446,
+      "event_id": "event_33a718046bb1431a9082",
+      "type": "response.output_item.added",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "output_index": 0,
+      "item": {
+        "id": "item_f8d57a4a77074f6a8bbe",
+        "type": "message",
+        "status": "in_progress",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": ""
+          }
+        ]
+      }
+    },
+    {
+      "at": 312561.893304656,
+      "event_id": "event_8315df9ad1de4fa69ceb",
+      "type": "response.content_part.added",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": ""
+      }
+    },
+    {
+      "at": 312563.014081175,
+      "event_id": "event_189aeb06cfa54aedb2da",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312563.01458465,
+      "event_id": "event_12d213b7ee1d4dbca4bd",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312563.48941359,
+      "event_id": "event_44ef81de037a4b689980",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312563.489767839,
+      "event_id": "event_ebc829d6611c4322a662",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312563.879504749,
+      "event_id": "event_25e6c9adc5c8474db001",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312563.880186449,
+      "event_id": "event_1220b597f3f14b1faff8",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312564.264163896,
+      "event_id": "event_69924afae15f4eb18864",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312564.264984191,
+      "event_id": "event_839df348595d495dac60",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312564.606295287,
+      "event_id": "event_bfeb0bc5778847018cad",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312564.607065944,
+      "event_id": "event_1dc7356baedd42df8a9b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312564.607153971,
+      "event_id": "event_5145ba3148c24249addd",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312565.001961376,
+      "event_id": "event_9270e1ce8b1143458857",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312565.002534568,
+      "event_id": "event_7f2ab97dbc644c9ab9cf",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312565.38472612,
+      "event_id": "event_4b52aa0aa026485d9e81",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312565.385194346,
+      "event_id": "event_9bca96d169b84874b34b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312565.769403525,
+      "event_id": "event_4ae10efba39e4ab29a49",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312565.769864051,
+      "event_id": "event_e720d5f538b740b9a952",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312566.149284898,
+      "event_id": "event_2a529e75b6aa4793948c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312566.149631837,
+      "event_id": "event_f0c456ec77274e13acec",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312566.527759263,
+      "event_id": "event_2e861751333e457cbde9",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312566.528292607,
+      "event_id": "event_b8c7a010c2a546bd9449",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312566.906499391,
+      "event_id": "event_b216f5a7f95d4946ae79",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312566.9068488,
+      "event_id": "event_c61e3202501d4cb0a735",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312567.287649884,
+      "event_id": "event_9626395d8ad046dd8a0b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312567.288028063,
+      "event_id": "event_a9dc99f1298c4454a68e",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312567.670489875,
+      "event_id": "event_6ca1c362c5c94ff2a153",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312567.670843274,
+      "event_id": "event_ba9bd0c6f6a4494a8d62",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312568.054324795,
+      "event_id": "event_89317e38b8af4c58b47c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312568.055103382,
+      "event_id": "event_adb4b170cbae47569add",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312568.437518426,
+      "event_id": "event_075730a523bf492bb912",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312568.437878495,
+      "event_id": "event_fb7b3c1abbf04ce89cab",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312568.825446541,
+      "event_id": "event_249524eba4c549208b48",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312568.826281765,
+      "event_id": "event_44081b7e8b444ba5a6bd",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312569.20768174,
+      "event_id": "event_a8d3b63607734161b597",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312569.208051739,
+      "event_id": "event_058c412d70b6435bbd91",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312569.590269878,
+      "event_id": "event_c7a27994046948e9a97f",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312569.590652356,
+      "event_id": "event_be2a21136eb04630bd40",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312569.864088044,
+      "event_id": "event_eb2faf8e54284a63aea6",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312569.864392805,
+      "event_id": "event_d082d3bb6aab42d78102",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312570.250883674,
+      "event_id": "event_0ec75ae97e8d4070829b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312570.251240323,
+      "event_id": "event_b916e5f91e1246d98574",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312570.625015421,
+      "event_id": "event_173ed7b8723041f3b963",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312570.625400799,
+      "event_id": "event_73e1770403db48ce8bd8",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312571.002506615,
+      "event_id": "event_d3f6979036c0442d9270",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312571.003279692,
+      "event_id": "event_2934d2c64ad54b1c8574",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312571.389017303,
+      "event_id": "event_aa7916bedb3e4308bc2d",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312571.389396041,
+      "event_id": "event_954478645d8d401381c0",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312571.774096634,
+      "event_id": "event_01b605a16f874aa09f68",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312571.774476582,
+      "event_id": "event_4b01a00b112b468e9442",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312572.154516048,
+      "event_id": "event_47bde0a31cf044bc9e5c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312572.155248945,
+      "event_id": "event_5a5243bac99649beb394",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312572.540282437,
+      "event_id": "event_e9e137f9fe67429ba020",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312572.541113292,
+      "event_id": "event_9ccf57c3f64d4372b83d",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312572.91816166,
+      "event_id": "event_5edd21e565944adc9bae",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312572.918903337,
+      "event_id": "event_83b59028cd6242cc860a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312573.175612998,
+      "event_id": "event_b816f274268547df9c05",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312573.175900639,
+      "event_id": "event_e3a6bc89a3fb48a18936",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312573.175930528,
+      "event_id": "event_cbeb5dcb7c1a449c8880",
+      "type": "response.output_audio.done",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312573.175987036,
+      "event_id": "event_ad536e8ffc3c4527b8a1",
+      "type": "response.output_audio_transcript.done",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0,
+      "transcript": "How about *The Night Circus* by Erin Morgenstern? It's a magical realism novel set in a mysterious circus where two young magicians prepare to compete in a grand contest. The immersive atmosphere and enchanting storytelling make it a perfect read for relaxing this afternoon."
+    },
+    {
+      "at": 312573.176081194,
+      "event_id": "event_1bdeaa8021ad492e9640",
+      "type": "response.content_part.done",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "item_id": "item_f8d57a4a77074f6a8bbe",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": "How about *The Night Circus* by Erin Morgenstern? It's a magical realism novel set in a mysterious circus where two young magicians prepare to compete in a grand contest. The immersive atmosphere and enchanting storytelling make it a perfect read for relaxing this afternoon."
+      }
+    },
+    {
+      "at": 312573.176135662,
+      "event_id": "event_064d43c0ffe044d08742",
+      "type": "response.output_item.done",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "output_index": 0,
+      "item": {
+        "id": "item_f8d57a4a77074f6a8bbe",
+        "type": "message",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": "How about *The Night Circus* by Erin Morgenstern? It's a magical realism novel set in a mysterious circus where two young magicians prepare to compete in a grand contest. The immersive atmosphere and enchanting storytelling make it a perfect read for relaxing this afternoon."
+          }
+        ]
+      }
+    },
+    {
+      "at": 312573.17619991,
+      "event_id": "event_9b47fe74da3d4d3faee3",
+      "type": "response.timing",
+      "response_id": "resp_175528e7c94c4e4ca080",
+      "stages": {
+        "speech_end": 0.0,
+        "turn_committed": 699.55,
+        "asr_started": 699.55,
+        "speech_started": -1419.6,
+        "asr_generation_started": 744.82,
+        "asr_first_token": 767.27,
+        "asr_last_token": 877.46,
+        "asr_tokens_done": 877.69,
+        "asr_completed": 878.37,
+        "response_started": 878.87,
+        "llm_first_token": 1292.59,
+        "llm_first_text_token": 1292.71,
+        "first_text_chunk": 1496.87,
+        "tts_started": 1497.01,
+        "tts_first_audio": 1997.81,
+        "tts_first_speech": 1998.0,
+        "first_audio_sent": 1999.38,
+        "response_done": 12161.84
+      }
+    },
+    {
+      "at": 312573.176236019,
+      "event_id": "event_232fc117c3e64f1bbac8",
+      "type": "response.done",
+      "response": {
+        "id": "resp_175528e7c94c4e4ca080",
+        "object": "realtime.response",
+        "status": "completed",
+        "output": [
+          {
+            "id": "item_f8d57a4a77074f6a8bbe",
+            "type": "message",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_audio",
+                "transcript": "How about *The Night Circus* by Erin Morgenstern? It's a magical realism novel set in a mysterious circus where two young magicians prepare to compete in a grand contest. The immersive atmosphere and enchanting storytelling make it a perfect read for relaxing this afternoon."
+              }
+            ]
+          }
+        ],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312580.482685241,
+      "event_id": "event_dca3ce1b8f7e45ab80e5",
+      "type": "input_audio_buffer.speech_started",
+      "audio_start_ms": 0,
+      "item_id": "item_fa38c711f3b1496e81c7"
+    },
+    {
+      "at": 312583.222637106,
+      "event_id": "event_454a90aa3b5c46f1bf9f",
+      "type": "input_audio_buffer.speech_stopped",
+      "audio_end_ms": 3060,
+      "item_id": "item_ee7034920c9a44f3a11e"
+    },
+    {
+      "at": 312583.222688264,
+      "event_id": "event_efc6fdec25b84ad9a872",
+      "type": "input_audio_buffer.committed",
+      "previous_item_id": null,
+      "item_id": "item_0995d936f6734fe7bf07"
+    },
+    {
+      "at": 312583.222716443,
+      "event_id": "event_4739d428b8694a99a5f8",
+      "type": "conversation.item.created",
+      "previous_item_id": null,
+      "item": {
+        "id": "item_0995d936f6734fe7bf07",
+        "type": "message",
+        "role": "user",
+        "status": "completed",
+        "content": [
+          {
+            "type": "input_audio",
+            "transcript": null
+          }
+        ]
+      }
+    },
+    {
+      "at": 312583.430252072,
+      "event_id": "event_ba832ccf9ea64bb2a596",
+      "type": "conversation.item.input_audio_transcription.completed",
+      "item_id": "item_0995d936f6734fe7bf07",
+      "content_index": 0,
+      "transcript": "Thanks. Do you have another suggestion?"
+    },
+    {
+      "at": 312583.430572772,
+      "event_id": "event_31a1207c98774f248d66",
+      "type": "response.created",
+      "response": {
+        "id": "resp_de0d5677a0f245e68e02",
+        "object": "realtime.response",
+        "status": "in_progress",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312583.430610851,
+      "event_id": "event_e940b6e4579249e7a0be",
+      "type": "response.output_item.added",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "output_index": 0,
+      "item": {
+        "id": "item_be4081e929514933b596",
+        "type": "message",
+        "status": "in_progress",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": ""
+          }
+        ]
+      }
+    },
+    {
+      "at": 312583.43063343,
+      "event_id": "event_ad64662904ef4ee49de9",
+      "type": "response.content_part.added",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": ""
+      }
+    },
+    {
+      "at": 312584.326447777,
+      "event_id": "event_1d9f885b2adc4e599b3d",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312584.327557263,
+      "event_id": "event_e9191656533344cca2d6",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312584.404931417,
+      "event_id": "event_4f3906c97415417ba6e2",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312584.405149211,
+      "event_id": "event_52f280569c194839b270",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312584.869416527,
+      "event_id": "event_a3b6b0b55a6743138166",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312584.869793066,
+      "event_id": "event_d7c9839851e94201acad",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312585.255362008,
+      "event_id": "event_b8f5cdbff41541a3b9ec",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312585.255735396,
+      "event_id": "event_2d592ff2ab054cc79b1f",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312585.638579452,
+      "event_id": "event_f2d9152bf9de454fa3b4",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312585.638976899,
+      "event_id": "event_cfa6dc22991947f3bdd1",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312586.014437812,
+      "event_id": "event_a67f2ae7475d4ecd9536",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312586.014961065,
+      "event_id": "event_dd170c8c13f949278731",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312586.401475958,
+      "event_id": "event_831607c2f3f94ae4aa1f",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312586.401862227,
+      "event_id": "event_212cb8aa01334fd2ad24",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312586.41869676,
+      "event_id": "event_2085e158458b4274b81c",
+      "type": "input_audio_buffer.speech_started",
+      "audio_start_ms": 0,
+      "item_id": "item_71e41a4557754af5af41"
+    },
+    {
+      "at": 312586.419244583,
+      "event_id": "event_00628a6070664342a9ad",
+      "type": "response.timing",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "stages": {
+        "speech_end": 0.0,
+        "turn_committed": 699.33,
+        "asr_started": 699.33,
+        "speech_started": -2040.76,
+        "asr_generation_started": 744.81,
+        "asr_first_token": 766.88,
+        "asr_last_token": 906.01,
+        "asr_tokens_done": 906.15,
+        "asr_completed": 906.77,
+        "response_started": 907.24,
+        "llm_first_token": 1252.51,
+        "llm_first_text_token": 1252.7,
+        "first_text_chunk": 1293.99,
+        "tts_started": 1294.1,
+        "tts_first_audio": 1801.88,
+        "tts_first_speech": 1801.97,
+        "first_audio_sent": 1802.92,
+        "response_cancelled": 3895.8
+      }
+    },
+    {
+      "at": 312586.419283792,
+      "event_id": "event_09a151cc5a66400085c4",
+      "type": "response.output_audio.done",
+      "response_id": "resp_de0d5677a0f245e68e02",
+      "item_id": "item_be4081e929514933b596",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312586.419322711,
+      "event_id": "event_91a007fd7e854dec8ef2",
+      "type": "response.done",
+      "response": {
+        "id": "resp_de0d5677a0f245e68e02",
+        "object": "realtime.response",
+        "status": "cancelled",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312589.059024341,
+      "event_id": "event_6663e1d55c724bbb84b3",
+      "type": "input_audio_buffer.speech_stopped",
+      "audio_end_ms": 2960,
+      "item_id": "item_10eaa5d5859f400e99fc"
+    },
+    {
+      "at": 312589.05907943,
+      "event_id": "event_5f1c51fbecbb4dd49728",
+      "type": "input_audio_buffer.committed",
+      "previous_item_id": null,
+      "item_id": "item_41ce8fb1a44745cc8471"
+    },
+    {
+      "at": 312589.059087799,
+      "event_id": "event_83e34eab2575444e9aa4",
+      "type": "conversation.item.created",
+      "previous_item_id": null,
+      "item": {
+        "id": "item_41ce8fb1a44745cc8471",
+        "type": "message",
+        "role": "user",
+        "status": "completed",
+        "content": [
+          {
+            "type": "input_audio",
+            "transcript": null
+          }
+        ]
+      }
+    },
+    {
+      "at": 312589.245213704,
+      "event_id": "event_a0262df8b85b4423a24c",
+      "type": "conversation.item.input_audio_transcription.completed",
+      "item_id": "item_41ce8fb1a44745cc8471",
+      "content_index": 0,
+      "transcript": "A fantasy book, please."
+    },
+    {
+      "at": 312589.24565002,
+      "event_id": "event_df7cdf8ebcc3484d8cdc",
+      "type": "response.created",
+      "response": {
+        "id": "resp_e1316a475204493c8b57",
+        "object": "realtime.response",
+        "status": "in_progress",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312589.245691289,
+      "event_id": "event_09c67bf61096472a8537",
+      "type": "response.output_item.added",
+      "response_id": "resp_e1316a475204493c8b57",
+      "output_index": 0,
+      "item": {
+        "id": "item_abd4deed8e2949b8b598",
+        "type": "message",
+        "status": "in_progress",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": ""
+          }
+        ]
+      }
+    },
+    {
+      "at": 312589.245720918,
+      "event_id": "event_52ec031acb8940c2ba5a",
+      "type": "response.content_part.added",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": ""
+      }
+    },
+    {
+      "at": 312590.28357823,
+      "event_id": "event_803edc7cc85c4bd1a7b8",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312590.284156523,
+      "event_id": "event_77a9d9a0b0fc4f09829a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312590.74633115,
+      "event_id": "event_bbc4efc55cef4ae1b14e",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312590.747044018,
+      "event_id": "event_2ab9737e9e894cff80a2",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.128198275,
+      "event_id": "event_0d271936016f43b58d25",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.128567664,
+      "event_id": "event_0e1c4febb10843278eab",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.515526401,
+      "event_id": "event_401f4f3f68db49a8b8d7",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.515902029,
+      "event_id": "event_e249ea7163bb4757a858",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.90410056,
+      "event_id": "event_b413e0a05005431797f3",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.904490538,
+      "event_id": "event_164ad470b633448db6a4",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.974060711,
+      "event_id": "event_26a85ac6031a4983baf0",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312591.974235736,
+      "event_id": "event_8242c828dea6408fac12",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312592.362505183,
+      "event_id": "event_875e7d84473841d780f1",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312592.363334607,
+      "event_id": "event_2fee6f505c8843d29fbc",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312592.737606044,
+      "event_id": "event_2f7e75810d044bf1b98f",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312592.738369581,
+      "event_id": "event_e5621f4062a0455ea430",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312593.117939315,
+      "event_id": "event_d113d921da7640c6b4a9",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312593.118309263,
+      "event_id": "event_f2500240593b4a5399f3",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312593.505996568,
+      "event_id": "event_90c45bd8fb1647e88584",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312593.506378976,
+      "event_id": "event_047c6699f05b47bf8f8c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312593.886783414,
+      "event_id": "event_e153d3af37a54aec81c9",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312593.887523242,
+      "event_id": "event_39c919db024048339874",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312594.273537357,
+      "event_id": "event_266c5871d0f048b290a9",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312594.274047922,
+      "event_id": "event_0f1539ac941f4beab01b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312594.659581192,
+      "event_id": "event_4c730b10dc704252844c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312594.660048388,
+      "event_id": "event_99398764dbfe40138373",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312595.043442574,
+      "event_id": "event_6779b4a50e534e70b4cc",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312595.04422022,
+      "event_id": "event_a251c7614054404e8531",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312595.426718464,
+      "event_id": "event_0e2fddf984b34161a2bf",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312595.427485251,
+      "event_id": "event_8e73fdae2420430a8628",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312595.812635963,
+      "event_id": "event_859b123a87374ece8822",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312595.8130555,
+      "event_id": "event_4c8bd3f749624338a5a4",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312596.20083364,
+      "event_id": "event_e4f4bbfa651a438983e6",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312596.201199469,
+      "event_id": "event_be26705dc8364a5fb41c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312596.594497291,
+      "event_id": "event_5942dbb01a9942cc944f",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312596.5948671,
+      "event_id": "event_3d5ca47f6e9243b69164",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312596.98135628,
+      "event_id": "event_1490514fc54149c8b4ff",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312596.982066408,
+      "event_id": "event_5a2844a214c548de8638",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312597.372805458,
+      "event_id": "event_0e439c324de74704b389",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312597.373167017,
+      "event_id": "event_b93465caab874ec089da",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312597.760492193,
+      "event_id": "event_f542bf03bc594a63b0be",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312597.760856211,
+      "event_id": "event_e4b3d7dfb0b0424199e7",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312598.14737058,
+      "event_id": "event_e5f67ba0965a47979a72",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312598.147745189,
+      "event_id": "event_7dfcf72e923f4893823a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312598.538639104,
+      "event_id": "event_f5d4537986da4b73a79b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312598.539021872,
+      "event_id": "event_48cf9e1e3d134ef49d2e",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312598.922513993,
+      "event_id": "event_7c8e2c75530943bfa16c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312598.922880942,
+      "event_id": "event_49b89dec9e19462d9fbc",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312599.310686011,
+      "event_id": "event_7c76b08c690e45beaba6",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312599.311252684,
+      "event_id": "event_41b5aab3e71d427c8c92",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312599.557056305,
+      "event_id": "event_7cca4bb73da344458878",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312599.557403554,
+      "event_id": "event_1c8f0383c99e41a0918d",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312599.954035093,
+      "event_id": "event_8f86b22b9c6c4cdba108",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312599.954398962,
+      "event_id": "event_d8ce394440df4f5db9ba",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.334039431,
+      "event_id": "event_bb77afa73b084f9e8bd2",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.334418549,
+      "event_id": "event_22b9a5593b934144aab7",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.717215572,
+      "event_id": "event_1d0b9ccb96814d1d9d9a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.71760307,
+      "event_id": "event_f09bc51a148c499dbedd",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.963942034,
+      "event_id": "event_d91e48e837594c049e52",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.964313003,
+      "event_id": "event_5de58b27db8340689923",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.964321472,
+      "event_id": "event_b1032d3f7b9c458bbe8b",
+      "type": "response.output_audio.done",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312600.964329032,
+      "event_id": "event_3d47c8ae1252430ab3b2",
+      "type": "response.output_audio_transcript.done",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0,
+      "transcript": "How about *The Name of the Wind* by Patrick Rothfuss? It follows a legendary wizard who recounts his life story to an apprentice, filled with rich lore, deep character development, and stunning world-building that will transport you to a magical realm."
+    },
+    {
+      "at": 312600.964334122,
+      "event_id": "event_52dc8b7687f848ad85da",
+      "type": "response.content_part.done",
+      "response_id": "resp_e1316a475204493c8b57",
+      "item_id": "item_abd4deed8e2949b8b598",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": "How about *The Name of the Wind* by Patrick Rothfuss? It follows a legendary wizard who recounts his life story to an apprentice, filled with rich lore, deep character development, and stunning world-building that will transport you to a magical realm."
+      }
+    },
+    {
+      "at": 312600.964340402,
+      "event_id": "event_78f32afc38c2404aa2d7",
+      "type": "response.output_item.done",
+      "response_id": "resp_e1316a475204493c8b57",
+      "output_index": 0,
+      "item": {
+        "id": "item_abd4deed8e2949b8b598",
+        "type": "message",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": "How about *The Name of the Wind* by Patrick Rothfuss? It follows a legendary wizard who recounts his life story to an apprentice, filled with rich lore, deep character development, and stunning world-building that will transport you to a magical realm."
+          }
+        ]
+      }
+    },
+    {
+      "at": 312600.964352222,
+      "event_id": "event_3b5af64199db454b8009",
+      "type": "response.timing",
+      "response_id": "resp_e1316a475204493c8b57",
+      "stages": {
+        "speech_end": 0.0,
+        "turn_committed": 700.73,
+        "asr_started": 700.73,
+        "speech_started": -1939.72,
+        "asr_generation_started": 747.42,
+        "asr_first_token": 769.37,
+        "asr_last_token": 885.82,
+        "asr_tokens_done": 886.02,
+        "asr_completed": 886.67,
+        "response_started": 887.35,
+        "llm_first_token": 1218.45,
+        "llm_first_text_token": 1218.62,
+        "first_text_chunk": 1424.71,
+        "tts_started": 1424.8,
+        "tts_first_audio": 1923.82,
+        "tts_first_speech": 1923.99,
+        "first_audio_sent": 1925.0,
+        "response_done": 12605.79
+      }
+    },
+    {
+      "at": 312600.964357191,
+      "event_id": "event_48347f047b0345fc9fde",
+      "type": "response.done",
+      "response": {
+        "id": "resp_e1316a475204493c8b57",
+        "object": "realtime.response",
+        "status": "completed",
+        "output": [
+          {
+            "id": "item_abd4deed8e2949b8b598",
+            "type": "message",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_audio",
+                "transcript": "How about *The Name of the Wind* by Patrick Rothfuss? It follows a legendary wizard who recounts his life story to an apprentice, filled with rich lore, deep character development, and stunning world-building that will transport you to a magical realm."
+              }
+            ]
+          }
+        ],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312608.47103435,
+      "event_id": "event_379bd56d59c44b13a45c",
+      "type": "input_audio_buffer.speech_started",
+      "audio_start_ms": 0,
+      "item_id": "item_1f80919b84c54c20a57c"
+    },
+    {
+      "at": 312609.59150592,
+      "event_id": "event_1e20f2d223f54120bc5c",
+      "type": "input_audio_buffer.speech_stopped",
+      "audio_end_ms": 1440,
+      "item_id": "item_61b890b541244eba935b"
+    },
+    {
+      "at": 312609.591573708,
+      "event_id": "event_ca8a31d855524615ad31",
+      "type": "input_audio_buffer.committed",
+      "previous_item_id": null,
+      "item_id": "item_f025bd6964294eebbc8d"
+    },
+    {
+      "at": 312609.591595397,
+      "event_id": "event_3ff65a49438449ddbead",
+      "type": "conversation.item.created",
+      "previous_item_id": null,
+      "item": {
+        "id": "item_f025bd6964294eebbc8d",
+        "type": "message",
+        "role": "user",
+        "status": "completed",
+        "content": [
+          {
+            "type": "input_audio",
+            "transcript": null
+          }
+        ]
+      }
+    },
+    {
+      "at": 312609.729573058,
+      "event_id": "event_c8232e63679f4169acc2",
+      "type": "conversation.item.input_audio_transcription.completed",
+      "item_id": "item_f025bd6964294eebbc8d",
+      "content_index": 0,
+      "transcript": "Thanks."
+    },
+    {
+      "at": 312609.729922857,
+      "event_id": "event_80ecd60c0f36474492a8",
+      "type": "response.created",
+      "response": {
+        "id": "resp_36f45c690d364846bf4e",
+        "object": "realtime.response",
+        "status": "in_progress",
+        "output": [],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    },
+    {
+      "at": 312609.729962716,
+      "event_id": "event_8d6dc2043a784b938c39",
+      "type": "response.output_item.added",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "output_index": 0,
+      "item": {
+        "id": "item_d2a81e0d6d494dd1916a",
+        "type": "message",
+        "status": "in_progress",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": ""
+          }
+        ]
+      }
+    },
+    {
+      "at": 312609.729987675,
+      "event_id": "event_5d029056f073449182b6",
+      "type": "response.content_part.added",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": ""
+      }
+    },
+    {
+      "at": 312610.604309186,
+      "event_id": "event_693315e64f094d4ca8e2",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312610.604751232,
+      "event_id": "event_2d398259e23144b9b276",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312610.990975997,
+      "event_id": "event_415a7f6b35444c179aaa",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312610.991393504,
+      "event_id": "event_f1cbd6f8d957472eac5c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312611.374321399,
+      "event_id": "event_fabfcbc627134e9fb283",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312611.374837444,
+      "event_id": "event_ac4231094d094396b18a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312611.668503672,
+      "event_id": "event_4efe4bedbbeb46b9802c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312611.669081964,
+      "event_id": "event_e26026b3b0a445ac96e8",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312612.068855892,
+      "event_id": "event_5b06510ed3634561a202",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312612.06924275,
+      "event_id": "event_0b9c52682233470baac1",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312612.444771163,
+      "event_id": "event_d7dfec750bcd475ea0c2",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312612.445153231,
+      "event_id": "event_e380a99f3c6342d492ef",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312612.821848408,
+      "event_id": "event_7217ab85686f49799fcb",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312612.822202927,
+      "event_id": "event_164f38b0d1bd4d7e90b7",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312613.198190105,
+      "event_id": "event_4976f4a2d6ea4032bbef",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312613.198590553,
+      "event_id": "event_195946ba7ee84f4fa532",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312613.583304314,
+      "event_id": "event_48b8f435e1d74f5e8e3a",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312613.583695502,
+      "event_id": "event_fc8961be12684ae5950b",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312613.964876601,
+      "event_id": "event_cc27736130a343ec808c",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312613.96524515,
+      "event_id": "event_d0a5980581be4e5fa1c6",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.358187766,
+      "event_id": "event_800851e4585749f89edb",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.358541436,
+      "event_id": "event_18b648b183194e85a4a9",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.741966215,
+      "event_id": "event_2d5009f04bcb40999cab",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.742708882,
+      "event_id": "event_ec01372be88a452291e5",
+      "type": "response.output_audio.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.76753754,
+      "event_id": "event_ea617cb3de8e46b6a237",
+      "type": "response.output_audio_transcript.delta",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.767620077,
+      "event_id": "event_3b70c1c8656a4d7696ca",
+      "type": "response.output_audio.done",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0
+    },
+    {
+      "at": 312614.767628277,
+      "event_id": "event_aee436af4deb4bbdb466",
+      "type": "response.output_audio_transcript.done",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0,
+      "transcript": "You're welcome! Let me know if you want another one or if there's a specific theme you're interested in."
+    },
+    {
+      "at": 312614.767634917,
+      "event_id": "event_bf550e27f4864f528681",
+      "type": "response.content_part.done",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "item_id": "item_d2a81e0d6d494dd1916a",
+      "output_index": 0,
+      "content_index": 0,
+      "part": {
+        "type": "output_audio",
+        "transcript": "You're welcome! Let me know if you want another one or if there's a specific theme you're interested in."
+      }
+    },
+    {
+      "at": 312614.767645456,
+      "event_id": "event_bb53eabb055a4590bf7e",
+      "type": "response.output_item.done",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "output_index": 0,
+      "item": {
+        "id": "item_d2a81e0d6d494dd1916a",
+        "type": "message",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_audio",
+            "transcript": "You're welcome! Let me know if you want another one or if there's a specific theme you're interested in."
+          }
+        ]
+      }
+    },
+    {
+      "at": 312614.767695065,
+      "event_id": "event_a076de52a3b64a94bcd6",
+      "type": "response.timing",
+      "response_id": "resp_36f45c690d364846bf4e",
+      "stages": {
+        "speech_end": 0.0,
+        "turn_committed": 700.35,
+        "asr_started": 700.35,
+        "speech_started": -420.23,
+        "asr_generation_started": 742.75,
+        "asr_first_token": 764.46,
+        "asr_last_token": 837.29,
+        "asr_tokens_done": 837.48,
+        "asr_completed": 838.18,
+        "response_started": 838.73,
+        "llm_first_token": 1204.38,
+        "llm_first_text_token": 1204.5,
+        "first_text_chunk": 1245.82,
+        "tts_started": 1245.91,
+        "tts_first_audio": 1711.97,
+        "tts_first_speech": 1712.06,
+        "first_audio_sent": 1712.97,
+        "response_done": 5876.44
+      }
+    },
+    {
+      "at": 312614.767713854,
+      "event_id": "event_1c4602d6c5b142bdbad1",
+      "type": "response.done",
+      "response": {
+        "id": "resp_36f45c690d364846bf4e",
+        "object": "realtime.response",
+        "status": "completed",
+        "output": [
+          {
+            "id": "item_d2a81e0d6d494dd1916a",
+            "type": "message",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_audio",
+                "transcript": "You're welcome! Let me know if you want another one or if there's a specific theme you're interested in."
+              }
+            ]
+          }
+        ],
+        "modalities": [
+          "audio",
+          "text"
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "llm": "unsloth/Qwen3.5-4B",
+    "tts": "qwen3-tts-1.7b-customvoice",
+    "voice": "Ryan",
+    "warmed": true
+  },
+  "measurement": "Simulated 24 kHz playback; 10 ms RMS speech bounds at 0.003. Client cancels/flushes on server speech_started. Not a browser barge-in test.",
+  "final_step": "Wait through final assistant speech; no extra user audio."
+}

@@ -1,0 +1,14 @@
+{
+  "request": {
+    "model": "qwen3-tts-1.7b-customvoice",
+    "voice": "Ryan",
+    "input": "Thanks, do you have another suggestion?",
+    "language": "English",
+    "response_format": "wav",
+    "instruct": "Speak clearly in English at a measured pace. Pronounce every word fully."
+  },
+  "sha256": "93a3b7579e0581e651fff1706ff6efe8050d80a87215994f858b24e18092d5cd",
+  "asr": "Thanks. Do you have another suggestion?",
+  "asr_matches": true,
+  "duration_s": 2.16
+}

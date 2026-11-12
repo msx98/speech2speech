@@ -1,0 +1,14 @@
+{
+  "request": {
+    "model": "qwen3-tts-1.7b-customvoice",
+    "voice": "Ryan",
+    "input": "Ok, go on.",
+    "language": "English",
+    "response_format": "wav",
+    "instruct": "Speak clearly in English at a measured pace. Pronounce every word fully."
+  },
+  "sha256": "11ee74423188512222df6844dfffe1fbdafd61fd00a7f1a375c015bb1ec229a3",
+  "asr": "Okay, go on.",
+  "asr_matches": true,
+  "duration_s": 1.6
+}

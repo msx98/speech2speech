@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ static_url }}/studio.css">
+</head>
+<body>
+
+<!-- ─── Tab bar ─────────────────────────────────────────────────── -->
+<div id="tab-bar">
+  <button class="tab active" data-panel="chat">&#x1F399; Chat</button>
+  <button class="tab" data-panel="tts">&#x1F50A; TTS</button>
+  <button class="tab" data-panel="config">&#x2699; Config</button>
+  <span id="studio-status" title="Voice Studio"></span>
+</div>
+
+<!-- ─── Hamburger + Sidebar ──────────────────────────────────────── -->
+<button id="hamburger">&#x2630;</button>
+<div id="sidebar-overlay"></div>
+<div id="sidebar">
+  <div id="sidebar-hdr">
+    <span>Conversations</span>
+    <button id="sidebar-close">&#x2715;</button>
+  </div>
+  <div id="sidebar-list"></div>
+</div>
+
+<!-- ─── Panel host ───────────────────────────────────────────────── -->
+<div id="panels">
+
+  <!-- ══ CHAT ══ -->
+  <div id="panel-chat" class="panel active">
+    <div id="offline">WebSocket disconnected &#x2014; reconnecting&#x2026;</div>
+    <div id="chat"></div>
+    <div id="wv-wrap"><canvas id="wv"></canvas></div>
+    <div id="vad-bar">
+      <input type="checkbox" id="vad-tog">
+      <label for="vad-tog">Auto VAD</label>
+      <button id="playpause-btn" title="Pause/resume audio playback">&#x23F8;&#xFE0F;</button>
+      <span style="margin-left:6px">Sens:</span>
+      <input type="range" id="vad-thr" min="2" max="40" value="10">
+      <span id="vad-thr-val">10</span>
+      <span id="vad-chip">off</span>
+      <span id="ws-status">&#x25CF; connecting</span>
+    </div>
+    <div class="voice-controls">
+      <label>Chat LLM <select id="chat-llm-model"><option value="">Server default</option></select></label>
+      <label>Voice actor <select id="chat-voice"><option value="">Use Config</option></select></label>
+      <label>Model <select id="chat-model"><option value="">Use Config</option></select></label>
+    </div>
+    <div class="voice-controls">
+      <button id="call-start" type="button">Start call</button>
+      <button id="call-mute" type="button" hidden aria-pressed="false">Mute</button>
+      <button id="call-end" type="button" hidden>Hang up</button>
+      <span id="call-status" role="status" aria-live="polite"></span>
+      <span id="call-echo-status" role="status"></span>
+    </div>
+    <div class="voice-controls">
+      <label for="call-playback-delay"><span>Call playback delay: <output id="call-playback-delay-value" for="call-playback-delay">700 ms</output></span>
+        <input id="call-playback-delay" type="range" min="0" max="1000" step="25" value="700"
+               title="Minimum silence after your speech before buffered call audio plays">
+      </label>
+    </div>
+    <details id="call-statistics">
+      <summary>Call latency statistics</summary>
+      <div id="call-stats-averages" role="status">No completed batch measurements yet.</div>
+      <svg id="call-stats-chart" viewBox="0 0 640 200" role="img" aria-label="Latency in milliseconds by completed prefill batch"></svg>
+      <p>Client-observed time from receiving the final prefill batch of a prefix. Blue: text chunk ready; orange: audio decoded; green: audio ready in browser, before playback delay. Gray crosses: discarded responses. First candidate per prefix; missing samples excluded from averages. Latest 200 prefixes; resets on each call.</p>
+    </details>
+    <div id="input-bar">
+      <button id="mic-btn" title="Click to record">&#x1F3A4;</button>
+      <input type="text" id="txt-in" placeholder="Or type a message&#x2026;" autocomplete="off">
+      <button id="send-btn">&#x27A4;</button>
+    </div>
+  </div>
+
+  <!-- ══ TTS ══ -->
+  <div id="panel-tts" class="panel">
+    <div class="tts-input">
+      <div class="voice-controls">
+        <label>Voice actor <select id="tts-voice"><option value="">Use Config</option></select></label>
+        <label>Model <select id="tts-model"><option value="">Use Config</option></select></label>
+      </div>
+      <textarea id="tts-text" placeholder="Enter text to synthesize&#x2026;"></textarea>
+      <div class="tts-btns">
+        <button class="tts-btn" id="tts-gen">&#x25B6; Generate &amp; Play</button>
+        <button class="tts-btn" id="tts-add">+ Queue</button>
+      </div>
+    </div>
+    <div class="tts-queue" id="tts-qlist">
+      <div class="tts-empty" id="tts-empty">No items yet &#x2014; generate something!</div>
+    </div>
+    <div class="tts-nowplay" id="tts-nowplay">
+      <div class="np-lbl">Now Playing</div>
+      <div class="np-txt" id="np-txt"></div>
+      <audio id="np-audio" controls></audio>
+    </div>
+  </div>
+
+  <!-- ══ CONFIG ══ -->
+  <div id="panel-config" class="panel">
+    <div class="cfg-header">
+      <div id="profile-row">
+        <div id="profile-view">
+          <div id="profile-dd-wrap">
+            <button id="profile-trigger"><span class="pt-name"></span><span class="pt-arrow">&#x25BE;</span></button>
+            <div id="profile-panel"></div>
+          </div>
+          <button id="profile-pencil" title="Rename profile">&#x270F;</button>
+        </div>
+        <div id="profile-edit" style="display:none">
+          <input id="profile-input" type="text" placeholder="Profile name&#x2026;" autocomplete="off">
+          <button class="profile-action-btn cancel" id="profile-cancel-btn" title="Cancel">&#x2715;</button>
+          <button class="profile-action-btn ok" id="profile-ok-btn" title="Confirm">&#x2713;</button>
+        </div>
+      </div>
+      <span id="cfg-status"></span>
+      <button id="cfg-reload">&#x21BB; Reload</button>
+    </div>
+
+    <div class="voice-controls">
+      <label>Default TTS model <select id="config-tts-model"><option value="">Server default</option></select></label>
+      <span class="voice-help">The selected profile is your default voice actor.</span>
+    </div>
+    <!-- Normal view: upload button + clip list + rebuild -->
+    <div class="cfg-normal" id="cfg-normal">
+      <div class="upload-wrap">
+        <button class="upload-btn" id="upload-btn">&#x2191; Upload Audio</button>
+        <button class="upload-btn" id="record-clip-btn" aria-pressed="false">&#x25CF; Record</button>
+        <input type="file" id="upload-input" accept="audio/*,.m4a,.caf,.opus,.mp3,.ogg,.flac,.aac,.wma,.wav,.webm,.mp4" style="display:none">
+      </div>
+      <div id="record-clip-status" role="status" aria-live="polite"></div>
+      <div class="clip-list" id="clip-list"></div>
+      <div class="rebuild-wrap">
+        <button id="rebuild-btn" disabled>Regenerate Reference</button>
+        <div id="rebuild-status"></div>
+      </div>
+    </div>
+
+    <!-- Segment editor view (shown after file selected) -->
+    <div class="seg-view" id="seg-view" style="display:none">
+      <div class="seg-hdr">
+        <button class="seg-icon-btn" id="seg-hdr-add" title="Add segment" style="display:none">+</button>
+        <div class="seg-progress-wrap" id="seg-progress-wrap">
+          <div class="seg-progress">
+            <div class="seg-progress-fill indeterminate" id="seg-progress-fill"></div>
+          </div>
+          <span class="seg-progress-label" id="seg-progress-label">Uploading&#x2026;</span>
+        </div>
+        <input class="seg-name-in" id="seg-name-in" style="display:none" placeholder="clip name">
+        <button class="seg-icon-btn" id="seg-cancel" title="Cancel">&#x2715;</button>
+      </div>
+      <div class="seg-toolbar" id="seg-toolbar" style="display:none">
+        <span class="seg-toolbar-lbl">Auto</span>
+        <button class="seg-tool-btn" id="seg-auto-btn" title="Detect speech regions and transcribe">&#x1FA84; Segment</button>
+      </div>
+      <div class="seg-divider"></div>
+      <div class="seg-list" id="seg-list" style="display:none"></div>
+      <div class="seg-footer">
+        <button class="seg-btn seg-btn-add" id="seg-add-row" style="display:none">+ Add Segment</button>
+        <button class="seg-btn seg-btn-finish" id="seg-finish" disabled>Finish and Add</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- #panels -->
+
+    <script src="{{ static_url }}/studio.js?v={{ asset_version }}" defer></script>
+    <script src="{{ static_url }}/call-stats.js?v={{ asset_version }}" defer></script>
+    <script src="{{ static_url }}/call.js?v={{ asset_version }}" defer></script>
+    <script>window.STUDIO_HEALTH = {{ health_url | tojson }};</script>
+    <script src="{{ static_url }}/studio-extra.js" defer></script>
+</body>
+</html>

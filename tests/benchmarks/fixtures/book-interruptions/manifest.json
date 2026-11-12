@@ -1,0 +1,38 @@
+[
+  {
+    "step": 1,
+    "text": "Could you suggest a good book to read this afternoon?",
+    "file": "01-10da956148cc.wav",
+    "metadata": "01-10da956148cc.json"
+  },
+  {
+    "step": 2,
+    "text": "wait...",
+    "file": "02-5708b2cde022.wav",
+    "metadata": "02-5708b2cde022.json"
+  },
+  {
+    "step": 3,
+    "text": "Ok, go on.",
+    "file": "03-89ad16b4d9e1.wav",
+    "metadata": "03-89ad16b4d9e1.json"
+  },
+  {
+    "step": 4,
+    "text": "Thanks, do you have another suggestion?",
+    "file": "04-8e33df142688.wav",
+    "metadata": "04-8e33df142688.json"
+  },
+  {
+    "step": 5,
+    "text": "a fantasy book please.",
+    "file": "05-c13e948c7a18.wav",
+    "metadata": "05-c13e948c7a18.json"
+  },
+  {
+    "step": 6,
+    "text": "Thanks!",
+    "file": "06-e3aa380294e1.wav",
+    "metadata": "06-e3aa380294e1.json"
+  }
+]

@@ -1,0 +1,3 @@
+# Installed only in the isolated worker environment; Qwen keeps Transformers 4.
+omnivoice==0.2.1
+transformers>=5.3,<6

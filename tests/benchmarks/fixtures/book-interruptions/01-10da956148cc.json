@@ -1,0 +1,14 @@
+{
+  "request": {
+    "model": "qwen3-tts-1.7b-customvoice",
+    "voice": "Ryan",
+    "input": "Could you suggest a good book to read this afternoon?",
+    "language": "English",
+    "response_format": "wav",
+    "instruct": "Speak clearly in English at a measured pace. Pronounce every word fully."
+  },
+  "sha256": "d07ba652965b082b6c07bd0206b1fe0c45682f21fc3ca9117786f04d1be16099",
+  "asr": "Could you suggest a good book to read this afternoon?",
+  "asr_matches": true,
+  "duration_s": 3.84
+}

@@ -1,0 +1,91 @@
+[server]
+realtime_legacy_audio_events = true
+tts_slots = 2
+stt_concurrency = 1
+stt_timeout = 600
+tts_chunk_chars = 180
+whisper_bin = /opt/whisper/bin/whisper-cli
+realtime_llm_base_url = http://llama:8080/v1
+; realtime_legacy_audio_events = true
+realtime_voice = Ryan
+realtime_max_tokens = 512
+realtime_max_audio_seconds = 120
+; realtime_llm_model = Qwen3.8-Flash-Next:FreeCuda
+realtime_llm_model = unsloth/Qwen3.5-4B
+default_stt = qwen3-asr-1.7b
+default_tts = qwen3-tts-1.7b-customvoice
+studio_clone_model = qwen3-tts-1.7b-base
+
+; Paths are examples. Only configure models actually downloaded.
+[model:whisper-large-v3-turbo]
+type = stt
+backend = whisper.cpp
+path = /home/models/whisper/ggml-large-v3-turbo.bin
+device = cuda
+threads = 4
+
+[model:kokoro]
+type = tts
+backend = sherpa-onnx
+family = kokoro
+path = /home/models/kokoro
+model = model.onnx
+voices = voices.bin
+tokens = tokens.txt
+lexicon = lexicon.txt
+data_dir = espeak-ng-data
+provider = cpu
+sample_rate = 24000
+voice_ids = 0,1,2,3,4,5,6,7
+
+[model:piper]
+type = tts
+backend = sherpa-onnx
+family = vits
+path = /home/models/piper
+model = model.onnx
+tokens = tokens.txt
+lexicon = lexicon.txt
+data_dir = espeak-ng-data
+provider = cpu
+sample_rate = 22050
+voice_ids = 0
+
+
+
+[model:qwen3-asr-1.7b]
+kind = stt
+backend = qwen-asr
+path = /home/models/Qwen/Qwen3-ASR-1.7B
+device = cuda:0
+dtype = bfloat16
+max_new_tokens = 512
+
+[model:qwen3-tts-1.7b-customvoice]
+kind = tts
+backend = qwen-tts
+mode = custom_voice
+path = /home/models/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice
+device = cuda:0
+dtype = bfloat16
+speaker = Ryan
+language = Auto
+
+
+[model:qwen3-tts-1.7b-base]
+type = tts
+backend = qwen-tts
+mode = voice_clone
+path = /home/models/Qwen/Qwen3-TTS-12Hz-1.7B-Base
+device = cuda:0
+dtype = bfloat16
+language = Auto
+
+
+[model:omnivoice]
+type = tts
+backend = omnivoice
+path = /home/models/k2-fsa/OmniVoice
+device = cuda:0
+dtype = float16
+sample_rate = 24000

@@ -1,0 +1,597 @@
+diff --git a/tools/server/README.md b/tools/server/README.md
+index 3b3b260cd..497039037 100644
+--- a/tools/server/README.md
++++ b/tools/server/README.md
+@@ -1669,6 +1669,28 @@ Tools go into the system prompt with the chat template, and the tool calls are p
+ 
+ See [examples/realtime_client.py](../../examples/realtime_client.py) for a client with the `openai` library.
+ 
++#### Incremental text input
++
++Text models can use `/v1/realtime?input=text` without an audio encoder. In router mode, also pass the `model` query parameter. `session.created` returns a server-generated `chat_id` (the session ID). One socket owns one slot and chat, including its KV state, across turns. Closing the socket releases it; a chat ID is not a reconnect or authentication token.
++
++After `session.update` sets instructions and `output_modalities: ["text"]`, send complete current user-text hypotheses with increasing revisions:
++
++```json
++{"type":"input_text_buffer.update","revision":1,"text":"Suggest a good b"}
++{"type":"input_text_buffer.update","revision":2,"text":"Suggest a good book"}
++{"type":"input_text_buffer.update","revision":3,"text":"Suggest a fantasy book"}
++```
++
++The server tokenizes text with its own vocabulary. Do not send token IDs from a different model. Updates can extend or correct the open user turn. Revisions must be positive integers below `INT64_MAX`; text is limited to 1 MiB and the model context limit. The server retains the matching token prefix and removes the revised KV suffix. If the memory backend cannot remove a suffix, it clears and replays the known conversation tokens. Generated history stays in context for the next turn.
++
++Each scheduler pass decodes at most one available `n_batch` of pending input before returning to the task queue. The next pass consumes newly arrived revisions and continues immediately if tokens remain. There is no input timer or requirement to wait for a complete word or sentence. At an empty input queue, the slot waits without sampling output.
++
++`input_text_buffer.updated` acknowledges an accepted revision. `input_text_buffer.prefill` reports `chat_id`, `revision`, `batch_tokens`, `total_tokens`, `batch_start_us`, `batch_end_us`, and `finished`. Batch timestamps use the server monotonic clock. A newer hypothesis can supersede an older revision before that older revision finishes prefilling.
++
++When the user's turn is complete, send `response.create`. The server finishes pending prefill, adds the assistant generation prompt, and streams `response.output_text.delta` through `response.done`. Use `response.cancel` and wait for `response.done` before opening a replacement user turn. Instructions cannot change after the conversation starts. This text-only mode currently requires a chat template with derivable role boundaries and no tools.
++
++Text-only sessions advertise `input_speculation: true`. To generate from a provisional prefix, send `{"type":"response.create","response":{"speculative":true}}` after its prefill finishes. Output streams immediately. Send `{"type":"response.discard"}` before revising the prefix: this cancels generation and restores the open user turn, then acknowledges `response.discarded`. A partial prompt checkpoint restores recurrent/SWA state while dense KV is trimmed; unsupported restoration falls back to replaying the known input. Send `{"type":"response.accept"}` to keep the generated response as conversation history. Speculation retains one checkpoint per active slot. Playback policy belongs to the downstream client.
++
+ ### POST `/v1/responses`: OpenAI-compatible Responses API
+ 
+ *Options:*
+diff --git a/tools/server/server-context.cpp b/tools/server/server-context.cpp
+index 78b1169d4..fff1c923e 100644
+--- a/tools/server/server-context.cpp
++++ b/tools/server/server-context.cpp
+@@ -3391,11 +3391,15 @@ private:
+                         if (task.params.control_action == SERVER_CONTROL_ACTION_RESPONSE_CANCEL) {
+                             slot->rt->cancel();
+                         } else {
++                            if (task.params.control_action == SERVER_CONTROL_ACTION_RESPONSE_DISCARD) {
++                                slot->rt->cancel();
++                            }
+                             slot->rt->push({
+                                 task.params.control_action,
+                                 std::move(task.params.control_text),
+                                 std::move(task.params.control_audio),
+                                 task.params.control_response,
++                                task.params.control_revision,
+                             });
+                         }
+                         slot->audio_wait = false;
+@@ -6453,6 +6457,13 @@ void server_routes::init_routes() {
+         // models that answer after the audio hold a conversation, see server-realtime.h
+         // live transcription: Voxtral Realtime (no chat), or an "asr" model in a session opened with ?intent=transcription
+         const bool live_asr = !ctx_server.asr_prompt.empty() && req.get_param("intent") == "transcription";
++        if (req.get_param("input") == "text") {
++            auto cap = ctx_server.mtmd_cap;
++            cap.text_gen = true;
++            cap.audio_gen = false;
++            server_realtime_conversation({queue_tasks, queue_results, *meta, params.sampling, nullptr, cap, ctx_server.vocab}, conn);
++            return;
++        }
+         if (ctx_server.mtmd_cap.audio_stream && ctx_server.mtmd_cap.chat && !live_asr) {
+             server_realtime_conversation({queue_tasks, queue_results, *meta, params.sampling, ctx_server.mctx, ctx_server.mtmd_cap, ctx_server.vocab}, conn);
+             return;
+diff --git a/tools/server/server-realtime.cpp b/tools/server/server-realtime.cpp
+index 5ef36a2b8..37cb521fd 100644
+--- a/tools/server/server-realtime.cpp
++++ b/tools/server/server-realtime.cpp
+@@ -174,6 +174,10 @@ struct realtime_conversation {
+     std::optional<task_result_state> parse; // the tool call parser, with tools
+ 
+     std::atomic<bool> closed{false};
++    bool response_active = false; // guarded by mutex
++    bool speculative_response = false;
++    int draft_turns = 0;
++    std::string draft_next_header;
+ 
+     realtime_conversation(const server_realtime_deps & deps, server_http_context::ws_conn & conn) : deps(deps), conn(conn) {}
+ 
+@@ -210,6 +214,8 @@ struct realtime_conversation {
+         }
+         return {
+             {"id",                id},
++            {"chat_id",           id},
++            {"input_speculation", deps.mctx == nullptr},
+             {"object",            "realtime.session"},
+             {"type",              "realtime"},
+             {"model",             deps.meta.model_name},
+@@ -227,7 +233,7 @@ struct realtime_conversation {
+     //
+ 
+     bool control(server_control_action action, std::string text = {}, std::vector<float> audio = {},
+-                 server_control_response response = {}) {
++                 server_control_response response = {}, int64_t revision = 0) {
+         server_response_reader ctl(deps.queue_tasks, deps.queue_results, 1);
+         server_task task(SERVER_TASK_TYPE_CONTROL);
+         task.id                       = ctl.get_new_id();
+@@ -236,6 +242,7 @@ struct realtime_conversation {
+         task.params.control_text      = std::move(text);
+         task.params.control_audio     = std::move(audio);
+         task.params.control_response  = response;
++        task.params.control_revision  = revision;
+         ctl.post_task(std::move(task));
+         auto result = ctl.next([this]() { return closed.load() || !conn.is_open(); });
+         auto * res = result ? dynamic_cast<server_task_result_control *>(result.get()) : nullptr;
+@@ -297,6 +304,21 @@ struct realtime_conversation {
+         const std::string d = with({msg("user", user), msg("assistant", reply), msg("user", user)});
+ 
+         const size_t pa = a.find(user);
++        if (deps.mctx == nullptr && tools.empty()) {
++            const size_t past_reply = d.find(reply, a.size());
++            const size_t next_user = past_reply == std::string::npos ? std::string::npos : d.find(user, past_reply + reply.size());
++            if (pa == std::string::npos || past_reply == std::string::npos || next_user == std::string::npos ||
++                g.compare(0, a.size(), a) != 0 || d.compare(0, a.size(), a) != 0) {
++                return false;
++            }
++            first_header = a.substr(0, pa);
++            user_footer = a.substr(pa + user.size());
++            assistant_header = g.substr(a.size());
++            // Past assistant headers can omit reasoning prefixes. Keep the actual generated prefix in KV.
++            assistant_footer.clear();
++            user_header = d.substr(past_reply + reply.size(), next_user - past_reply - reply.size());
++            return true;
++        }
+         const size_t pc = c.find(reply);
+         const size_t pd = d.find(user, c.size());
+         if (pa == std::string::npos || pc == std::string::npos || pd == std::string::npos ||
+@@ -348,6 +370,50 @@ struct realtime_conversation {
+         return true;
+     }
+ 
++    int64_t text_revision = 0;
++
++    void on_text_update(const json & ev) {
++        if (deps.mctx != nullptr || type != "realtime") {
++            send_error("input_text_buffer.update requires a text input session");
++            return;
++        }
++        if (!ev.contains("text") || !ev["text"].is_string() || ev["text"].get<std::string>().size() > 1024 * 1024 ||
++            !ev.contains("revision") || !ev["revision"].is_number_integer()) {
++            send_error("input_text_buffer.update requires text (at most 1 MiB) and a positive revision");
++            return;
++        }
++        const uint64_t revision_value = ev["revision"].get<uint64_t>();
++        if (revision_value == 0 || revision_value >= (uint64_t) INT64_MAX) {
++            send_error("input text revision is out of range");
++            return;
++        }
++        {
++            std::lock_guard<std::mutex> lock(mutex);
++            if (response_active) {
++                send_error("cancel or finish the response before updating input text");
++                return;
++            }
++        }
++        if (!turn_open) {
++            const std::string header = n_turns == 0 ? first_header : next_header + user_header;
++            if (!control(SERVER_CONTROL_ACTION_TEXT_BEGIN, header)) {
++                return;
++            }
++            next_header.clear();
++            started = turn_open = true;
++            text_revision = 0;
++        }
++        const int64_t revision = (int64_t) revision_value;
++        if (revision <= text_revision) {
++            send_error("input text revisions must increase");
++            return;
++        }
++        if (control(SERVER_CONTROL_ACTION_TEXT_REPLACE, ev["text"].get<std::string>(), {}, {}, revision)) {
++            text_revision = revision;
++            send_event({{"type", "input_text_buffer.updated"}, {"chat_id", id}, {"revision", revision}});
++        }
++    }
++
+     void on_append(const json & ev) {
+         std::string pcm;
+         try {
+@@ -515,6 +581,11 @@ struct realtime_conversation {
+         const std::string prompt = (turn_open ? user_footer : "") + assistant_header;
+         server_control_response response;
+         response.n_predict = max_output_tokens;
++        response.speculative = json_value(resp, "speculative", false);
++        if (response.speculative && deps.mctx != nullptr) {
++            send_error("speculative responses require a text input session");
++            return;
++        }
+         if (resp.contains("max_output_tokens") && !parse_max_output_tokens(resp["max_output_tokens"], response.n_predict)) {
+             send_error("response.create: max_output_tokens must be an integer or \"inf\"");
+             return;
+@@ -542,6 +613,12 @@ struct realtime_conversation {
+         {
+             std::lock_guard<std::mutex> lock(mutex);
+             response_id      = "resp_" + random_string();
++            response_active  = true;
++            speculative_response = response.speculative;
++            if (speculative_response) {
++                draft_turns = n_turns;
++                draft_next_header = next_header;
++            }
+             response_item_id = "item_" + random_string();
+             response_text.clear();
+             parts       = json::array();
+@@ -567,6 +644,21 @@ struct realtime_conversation {
+         n_turns++;
+     }
+ 
++    void on_response_discard() {
++        if (!speculative_response || deps.mctx != nullptr) {
++            send_error("no speculative text response to discard");
++            return;
++        }
++        if (!control(SERVER_CONTROL_ACTION_RESPONSE_DISCARD)) {
++            return;
++        }
++        std::lock_guard<std::mutex> lock(mutex);
++        turn_open = true;
++        n_turns = draft_turns;
++        next_header = draft_next_header;
++        speculative_response = false;
++    }
++
+     void on_session_update(const json & ev) {
+         const json session = ev.value("session", json::object());
+         if (!session.is_object()) {
+@@ -659,6 +751,8 @@ struct realtime_conversation {
+         const std::string t = json_value(ev, "type", std::string());
+         if (t == "session.update" || t == "transcription_session.update") {
+             on_session_update(ev);
++        } else if (t == "input_text_buffer.update") {
++            on_text_update(ev);
+         } else if (t == "input_audio_buffer.append") {
+             on_append(ev);
+         } else if (t == "input_audio_buffer.commit") {
+@@ -672,6 +766,15 @@ struct realtime_conversation {
+             on_response_create(ev);
+         } else if (t == "response.cancel") {
+             control(SERVER_CONTROL_ACTION_RESPONSE_CANCEL);
++        } else if (t == "response.discard") {
++            on_response_discard();
++        } else if (t == "response.accept") {
++            if (!speculative_response) {
++                send_error("no speculative response to accept");
++            } else if (control(SERVER_CONTROL_ACTION_RESPONSE_ACCEPT)) {
++                speculative_response = false;
++                send_event({{"type", "response.accepted"}, {"chat_id", id}});
++            }
+         } else {
+             send_error("unknown event type: " + t);
+         }
+@@ -744,6 +847,18 @@ struct realtime_conversation {
+ 
+     void on_result(const server_task_result_realtime & res) {
+         std::lock_guard<std::mutex> lock(mutex);
++        if (res.response_discarded) {
++            response_active = false;
++            send_event({{"type", "response.discarded"}, {"chat_id", id}, {"response_id", response_id}});
++            return;
++        }
++        if (res.input_prefill) {
++            send_event({{"type", "input_text_buffer.prefill"}, {"chat_id", id}, {"revision", res.input_revision},
++                        {"batch_tokens", res.input_batch_tokens}, {"total_tokens", res.input_total_tokens},
++                        {"batch_start_us", res.input_batch_start_us}, {"batch_end_us", res.input_batch_end_us},
++                        {"finished", res.input_finished}});
++            return;
++        }
+         if (!transcribe_item_id.empty()) {
+             if (!res.text.empty()) {
+                 transcript += res.text;
+@@ -821,6 +936,7 @@ struct realtime_conversation {
+         send_event({{"type", "response.done"}, {"response", {{"id", response_id}, {"object", "realtime.response"}, {"status", status},
+                     {"output", output}, {"usage", {{"output_tokens", res.n_decoded}}}}}});
+         parse.reset();
++        response_active = false;
+     }
+ 
+     //
+@@ -828,7 +944,9 @@ struct realtime_conversation {
+     //
+ 
+     void run() {
+-        input_rate = mtmd_get_audio_sample_rate(deps.mctx);
++        if (deps.mctx != nullptr) {
++            input_rate = mtmd_get_audio_sample_rate(deps.mctx);
++        }
+         if (deps.cap.audio_gen) {
+             output_rate = mtmd_gen_audio_get_info(deps.mctx).sample_rate;
+         }
+@@ -915,12 +1033,19 @@ server_realtime_slot::server_realtime_slot(llama_context * ctx, mtmd_context * m
+                                            const common_params_sampling & sampling, server_response & queue_results, int id_task, int index)
+     : ctx(ctx), model(llama_get_model(ctx)), vocab(llama_model_get_vocab(llama_get_model(ctx))), mctx(mctx), seq_id(seq_id),
+       n_ctx(n_ctx), sampling(sampling), queue_results(queue_results), id_task(id_task), index(index) {
+-    if (mtmd_gen_audio_get_info(mctx).type != MTMD_GEN_AUDIO_TYPE_NONE) {
++    if (mctx != nullptr && mtmd_gen_audio_get_info(mctx).type != MTMD_GEN_AUDIO_TYPE_NONE) {
+         gen.init(ctx, mctx);
+     }
+ }
+ 
+ void server_realtime_slot::push(server_realtime_op && op) {
++    if (op.action == SERVER_CONTROL_ACTION_RESPONSE_ACCEPT && draft_active) {
++        draft_active = false;
++        draft_base.clear();
++        draft_target.clear();
++        draft_checkpoint.clear_tgt();
++        return;
++    }
+     ops.push_back(std::move(op));
+ }
+ 
+@@ -929,7 +1054,7 @@ void server_realtime_slot::cancel() {
+ }
+ 
+ bool server_realtime_slot::is_idle() const {
+-    return ops.empty() && !responding;
++    return ops.empty() && !responding && !input_pending;
+ }
+ 
+ bool server_realtime_slot::fail(const std::string & msg, enum error_type type) {
+@@ -977,6 +1102,9 @@ bool server_realtime_slot::decode(const llama_token * tokens, const float * rows
+         if (ret != 0) {
+             return fail("failed to decode the conversation");
+         }
++        if (mctx == nullptr && tokens != nullptr) {
++            text_history.insert(text_history.end(), tokens + i0, tokens + i0 + n_cur);
++        }
+     }
+     n_past += n;
+     return true;
+@@ -1041,7 +1169,31 @@ bool server_realtime_slot::response_start(const server_realtime_op & op) {
+         const float * h = llama_get_embeddings_ith(ctx, -1);
+         h_state.assign(h, h + llama_model_n_embd(model));
+     } else {
+-        const llama_tokens toks = common_tokenize(vocab, op.text, false, true);
++        llama_tokens toks;
++        if (input_open) {
++            if (op.response.speculative) {
++                draft_active = true;
++                draft_base = input_base;
++                draft_target = input_target;
++                draft_header = input_header;
++                draft_text = input_text;
++                draft_revision = input_revision;
++                draft_checkpoint.update_pos(n_past, 0, n_past - 1);
++                draft_checkpoint.update_tgt(ctx, seq_id, LLAMA_STATE_SEQ_FLAGS_PARTIAL_ONLY);
++            }
++            toks = input_base;
++            const auto tail = common_tokenize(vocab, input_header + input_text + op.text, false, true);
++            toks.insert(toks.end(), tail.begin(), tail.end());
++            if (!input_rewind(toks)) {
++                return false;
++            }
++            toks.erase(toks.begin(), toks.begin() + text_history.size());
++            input_open = input_pending = false;
++            input_target.clear();
++            input_base.clear();
++        } else {
++            toks = common_tokenize(vocab, op.text, false, true);
++        }
+         if (toks.empty()) {
+             return fail("failed to start the response");
+         }
+@@ -1126,16 +1278,82 @@ bool server_realtime_slot::response_step() {
+ }
+ 
+ bool server_realtime_slot::update() {
+-    llama_set_embeddings(ctx, true);
++    llama_set_embeddings(ctx, mctx != nullptr);
+ 
+     if (responding) {
+         return response_step();
+     }
+ 
+     while (!ops.empty() && !responding) {
++        if (ops.front().action == SERVER_CONTROL_ACTION_RESPONSE_CREATE && input_pending) {
++            break;
++        }
+         server_realtime_op op = std::move(ops.front());
+         ops.pop_front();
+         switch (op.action) {
++            case SERVER_CONTROL_ACTION_RESPONSE_ACCEPT:
++                draft_active = false;
++                draft_base.clear();
++                draft_target.clear();
++                draft_checkpoint.clear_tgt();
++                break;
++            case SERVER_CONTROL_ACTION_RESPONSE_DISCARD:
++                if (!draft_active) {
++                    return fail("no speculative text state to restore");
++                }
++                input_base = std::move(draft_base);
++                input_target = std::move(draft_target);
++                input_header = std::move(draft_header);
++                input_text = std::move(draft_text);
++                input_revision = draft_revision;
++                input_open = input_pending = true;
++                draft_active = false;
++                if (draft_checkpoint.load_tgt(ctx, seq_id, LLAMA_STATE_SEQ_FLAGS_PARTIAL_ONLY) &&
++                    llama_memory_seq_rm(llama_get_memory(ctx), seq_id, (llama_pos) input_target.size(), -1)) {
++                    text_history = input_target;
++                    n_past = (llama_pos) input_target.size();
++                } else {
++                    if (!llama_memory_seq_rm(llama_get_memory(ctx), seq_id, -1, -1)) {
++                        return fail("cannot restore speculative input checkpoint");
++                    }
++                    text_history.clear();
++                    n_past = 0;
++                }
++                draft_checkpoint.clear_tgt();
++                {
++                    auto res = std::make_unique<server_task_result_realtime>();
++                    res->id = id_task;
++                    res->index = index;
++                    res->response_discarded = true;
++                    queue_results.send(std::move(res));
++                }
++                break;
++            case SERVER_CONTROL_ACTION_TEXT_BEGIN:
++                input_base = text_history;
++                input_header = op.text;
++                input_text.clear();
++                input_open = true;
++                input_revision = 0;
++                input_target = input_base;
++                {
++                    const auto tail = common_tokenize(vocab, input_header, false, true);
++                    input_target.insert(input_target.end(), tail.begin(), tail.end());
++                }
++                input_pending = true;
++                break;
++            case SERVER_CONTROL_ACTION_TEXT_REPLACE:
++                if (!input_open) {
++                    return fail("no open text input");
++                }
++                input_text = std::move(op.text);
++                input_revision = op.revision;
++                input_target = input_base;
++                {
++                    const auto tail = common_tokenize(vocab, input_header + input_text, false, true);
++                    input_target.insert(input_target.end(), tail.begin(), tail.end());
++                }
++                input_pending = true;
++                break;
+             case SERVER_CONTROL_ACTION_TEXT_APPEND:
+                 {
+                     const llama_tokens toks = common_tokenize(vocab, op.text, false, true);
+@@ -1179,10 +1397,61 @@ bool server_realtime_slot::update() {
+                     llama_memory_seq_rm(llama_get_memory(ctx), seq_id, -1, -1);
+                     stream.reset();
+                     n_past = 0;
++                    text_history.clear();
++                    input_target.clear();
++                    input_base.clear();
++                    input_open = input_pending = false;
+                 } break;
+             default:
+                 break;
+         }
+     }
++    return !input_pending || input_step();
++}
++
++bool server_realtime_slot::input_rewind(const llama_tokens & target) {
++    if (target.size() >= (size_t) n_ctx) {
++        return fail("the text input does not fit in the context", ERROR_TYPE_EXCEED_CONTEXT_SIZE);
++    }
++    size_t common = 0;
++    while (common < text_history.size() && common < target.size() && text_history[common] == target[common]) {
++        common++;
++    }
++    if (common < text_history.size()) {
++        auto memory = llama_get_memory(ctx);
++        // Recurrent models may not support suffix removal. Replay from the start in that case.
++        if (!llama_memory_seq_rm(memory, seq_id, (llama_pos) common, -1)) {
++            if (!llama_memory_seq_rm(memory, seq_id, -1, -1)) {
++                return fail("cannot reset the revised text input");
++            }
++            common = 0;
++        }
++        text_history.resize(common);
++        n_past = (llama_pos) common;
++    }
++    return true;
++}
++
++bool server_realtime_slot::input_step() {
++    if (!input_rewind(input_target)) {
++        return false;
++    }
++    const int32_t count = (int32_t) std::min<size_t>(llama_n_batch(ctx), input_target.size() - text_history.size());
++    const int64_t start = ggml_time_us();
++    if (count > 0 && !decode(input_target.data() + text_history.size(), nullptr, count, false)) {
++        return false;
++    }
++    input_pending = text_history.size() < input_target.size();
++    auto res = std::make_unique<server_task_result_realtime>();
++    res->id = id_task;
++    res->index = index;
++    res->input_prefill = true;
++    res->input_finished = !input_pending;
++    res->input_revision = input_revision;
++    res->input_batch_tokens = count;
++    res->input_total_tokens = n_past;
++    res->input_batch_start_us = start;
++    res->input_batch_end_us = ggml_time_us();
++    queue_results.send(std::move(res));
+     return true;
+ }
+diff --git a/tools/server/server-realtime.h b/tools/server/server-realtime.h
+index dd871261b..16019067c 100644
+--- a/tools/server/server-realtime.h
++++ b/tools/server/server-realtime.h
+@@ -40,6 +40,7 @@ struct server_realtime_op {
+     std::string             text;
+     std::vector<float>      audio;
+     server_control_response response;
++    int64_t                 revision = 0;
+ };
+ 
+ // the conversation of a slot that holds a realtime session (SERVER_TASK_TYPE_REALTIME), it runs on the server thread
+@@ -73,6 +74,21 @@ private:
+     int                    index;
+ 
+     std::deque<server_realtime_op> ops;
++    llama_tokens text_history;
++    llama_tokens input_base;
++    llama_tokens input_target;
++    std::string  input_header;
++    std::string  input_text;
++    int64_t      input_revision = 0;
++    bool         input_open = false;
++    bool         input_pending = false;
++    bool         draft_active = false;
++    llama_tokens draft_base;
++    llama_tokens draft_target;
++    std::string  draft_header;
++    std::string  draft_text;
++    int64_t      draft_revision = 0;
++    common_prompt_checkpoint draft_checkpoint;
+     llama_pos   n_past     = 0;     // positions of the conversation in the sequence
+     bool        responding = false;
+     bool        cancelled  = false;
+@@ -94,4 +110,6 @@ private:
+     std::string piece(llama_token tok) const;
+     bool response_start(const server_realtime_op & op);
+     bool response_step();
++    bool input_rewind(const llama_tokens & target);
++    bool input_step();
+ };
+diff --git a/tools/server/server-task.h b/tools/server/server-task.h
+index 8faae1f18..cfc885dba 100644
+--- a/tools/server/server-task.h
++++ b/tools/server/server-task.h
+@@ -60,13 +60,18 @@ enum server_control_action {
+     SERVER_CONTROL_ACTION_AUDIO_END,    // flush the audio stream and end it
+     // realtime conversations (SERVER_TASK_TYPE_REALTIME), applied in order with the audio actions
+     SERVER_CONTROL_ACTION_TEXT_APPEND,     // append control_text to the conversation
++    SERVER_CONTROL_ACTION_TEXT_BEGIN,
++    SERVER_CONTROL_ACTION_TEXT_REPLACE,
+     SERVER_CONTROL_ACTION_RESPONSE_CREATE, // generate after control_text, see control_response
+     SERVER_CONTROL_ACTION_RESPONSE_CANCEL, // stop the response being generated
++    SERVER_CONTROL_ACTION_RESPONSE_DISCARD,
++    SERVER_CONTROL_ACTION_RESPONSE_ACCEPT,
+     SERVER_CONTROL_ACTION_CLEAR,           // drop the conversation
+ };
+ 
+ // a response of a realtime conversation
+ struct server_control_response {
++    bool                           speculative = false;
+     mtmd_helper_gen_audio_out_mode out_mode  = MTMD_HELPER_GEN_AUDIO_OUT_AUTO;
+     common_params_sampling         sampling;       // of the text tokens: tool call grammar and preserved tokens
+     int32_t                        n_predict = -1; // text tokens and audio frames, -1: until the context is full
+@@ -114,6 +119,7 @@ struct task_params {
+     std::string           control_cmpl_id;
+     std::vector<float>    control_audio; // PCM F32 samples for SERVER_CONTROL_ACTION_AUDIO_APPEND
+     std::string           control_text;  // raw text, special tokens are parsed
++    int64_t               control_revision = 0;
+     server_control_response control_response;
+ 
+     // reported in generation_settings, parsing itself is owned by the chat session
+@@ -560,6 +566,14 @@ struct server_task_result_realtime : server_task_result {
+     bool               response_done = false;
+     bool               cancelled     = false;
+     int32_t            n_decoded     = 0;
++    bool               input_prefill = false;
++    bool               response_discarded = false;
++    bool               input_finished = false;
++    int64_t            input_revision = 0;
++    int32_t            input_batch_tokens = 0;
++    int32_t            input_total_tokens = 0;
++    int64_t            input_batch_start_us = 0;
++    int64_t            input_batch_end_us = 0;
+ 
+     virtual bool is_stop() override {
+         return false; // the session ends when the client leaves, the task is cancelled then

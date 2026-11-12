@@ -1,0 +1,74 @@
+[
+  {
+    "input": "Can you suggest something relaxing to do this afternoon?",
+    "input_duration_s": 4.08,
+    "stream_tts": true,
+    "audio_underruns_ms": [],
+    "input_transcript": "Can you suggest something relaxing to do this afternoon?",
+    "first_audio_s": 5.7366996700293384,
+    "gap_after_input_s": 1.6566996700293384,
+    "reply": "You could read a good book with a cup of tea.",
+    "stages_ms": {
+      "speech_end": 0.0,
+      "turn_committed": 703.21,
+      "asr_started": 703.21,
+      "asr_completed": 953.93,
+      "response_started": 954.42,
+      "llm_first_token": 1165.71,
+      "first_text_chunk": 1312.66,
+      "tts_started": 1312.73,
+      "tts_first_audio": 1705.78,
+      "first_audio_sent": 1706.7,
+      "response_done": 2795.58
+    },
+    "reply_asr": "You could read a good book with a cup of tea."
+  },
+  {
+    "input": "Can you suggest something relaxing to do this afternoon?",
+    "input_duration_s": 4.0,
+    "stream_tts": true,
+    "audio_underruns_ms": [],
+    "input_transcript": "Can you suggest something relaxing to do this afternoon?",
+    "first_audio_s": 5.620069199008867,
+    "gap_after_input_s": 1.6200691990088671,
+    "reply": "You could read a good book with a cup of tea.",
+    "stages_ms": {
+      "speech_end": 0.0,
+      "turn_committed": 703.61,
+      "asr_started": 703.61,
+      "asr_completed": 945.76,
+      "response_started": 946.21,
+      "llm_first_token": 1158.26,
+      "first_text_chunk": 1302.73,
+      "tts_started": 1302.8,
+      "tts_first_audio": 1689.9,
+      "first_audio_sent": 1690.91,
+      "response_done": 2918.9
+    },
+    "reply_asr": "You could read a good book with a cup of tea."
+  },
+  {
+    "input": "Can you suggest something relaxing to do this afternoon?",
+    "input_duration_s": 4.96,
+    "stream_tts": true,
+    "audio_underruns_ms": [],
+    "input_transcript": "Can you suggest something relaxing to do this afternoon?",
+    "first_audio_s": 6.538206299010199,
+    "gap_after_input_s": 1.5782062990101986,
+    "reply": "You could read a good book with a cup of tea.",
+    "stages_ms": {
+      "speech_end": 0.0,
+      "turn_committed": 703.3,
+      "asr_started": 703.3,
+      "asr_completed": 942.4,
+      "response_started": 943.03,
+      "llm_first_token": 1164.95,
+      "first_text_chunk": 1309.06,
+      "tts_started": 1309.16,
+      "tts_first_audio": 1700.34,
+      "first_audio_sent": 1701.69,
+      "response_done": 3090.8
+    },
+    "reply_asr": "You could read a good book with a cup of tea."
+  }
+]

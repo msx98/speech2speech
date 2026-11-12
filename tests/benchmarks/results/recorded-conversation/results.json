@@ -1,0 +1,74 @@
+[
+  {
+    "input": "Can you suggest something relaxing to do this afternoon?",
+    "input_duration_s": 5.68,
+    "stream_tts": true,
+    "audio_underruns_ms": [],
+    "input_transcript": "Can you suggest something relaxing to do this afternoon?",
+    "first_audio_s": 7.586807934974786,
+    "gap_after_input_s": 1.9068079349747862,
+    "reply": "Why not take a cozy nap with a warm cup of tea?",
+    "stages_ms": {
+      "speech_end": 0.0,
+      "turn_committed": 703.73,
+      "asr_started": 703.73,
+      "asr_completed": 945.97,
+      "response_started": 946.49,
+      "llm_first_token": 1191.57,
+      "first_text_chunk": 1657.89,
+      "tts_started": 1657.96,
+      "tts_first_audio": 2045.91,
+      "first_audio_sent": 2047.42,
+      "response_done": 3291.05
+    },
+    "reply_asr": "Why not take a cozy nap with a warm cup of tea?"
+  },
+  {
+    "input": "Could you suggest one more activity I can do at home?",
+    "input_duration_s": 4.96,
+    "stream_tts": true,
+    "audio_underruns_ms": [],
+    "input_transcript": "Could you suggest one more activity I can do at home?",
+    "first_audio_s": 7.04884249198949,
+    "gap_after_input_s": 2.0888424919894897,
+    "reply": "How about reading a favorite book by the window?",
+    "stages_ms": {
+      "speech_end": 0.0,
+      "turn_committed": 702.92,
+      "asr_started": 702.92,
+      "asr_completed": 965.51,
+      "response_started": 966.01,
+      "llm_first_token": 1405.52,
+      "first_text_chunk": 1715.89,
+      "tts_started": 1715.97,
+      "tts_first_audio": 2112.98,
+      "first_audio_sent": 2113.92,
+      "response_done": 3358.08
+    },
+    "reply_asr": "How about reading a favorite book by the window?"
+  },
+  {
+    "input": "Thanks for those ideas and I hope you have a lovely afternoon.",
+    "input_duration_s": 5.44,
+    "stream_tts": true,
+    "audio_underruns_ms": [],
+    "input_transcript": "Thanks for those ideas, and I hope you have a lovely afternoon.",
+    "first_audio_s": 7.494273912976496,
+    "gap_after_input_s": 2.0542739129764955,
+    "reply": "You're very welcome, and I hope you enjoy your relaxing afternoon!",
+    "stages_ms": {
+      "speech_end": 0.0,
+      "turn_committed": 703.53,
+      "asr_started": 703.53,
+      "asr_completed": 990.86,
+      "response_started": 991.36,
+      "llm_first_token": 1394.96,
+      "first_text_chunk": 1761.34,
+      "tts_started": 1761.42,
+      "tts_first_audio": 2153.34,
+      "first_audio_sent": 2154.83,
+      "response_done": 4360.24
+    },
+    "reply_asr": "You're very welcome, and I hope you enjoy your relaxing afternoon."
+  }
+]

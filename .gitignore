@@ -1,0 +1,11 @@
+data/
+vendor/
+bin/
+.venv/
+*.pyc
+__pycache__
+*.swp
+.venv
+*.log
+*.wav
+.omnivoice-venv/
